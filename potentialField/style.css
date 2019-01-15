@@ -1,0 +1,11 @@
+.grid_m{
+    height: 98vh;
+    width: 98vh;
+    position: fixed;
+    display: grid;
+}
+.cell{
+    //width: 10px;
+    //height: 10px;
+    border: 1px solid black;
+}
