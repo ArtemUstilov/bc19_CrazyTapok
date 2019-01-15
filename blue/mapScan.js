@@ -12,4 +12,9 @@
         }
         return false;
     }
-export default scanMap;
+function enemyTowerLocation(myTowerX,myTowerY,fuel_map)
+{
+    if(fuel_map) return {x:myTowerX, y:fuel_map.length-1-myTowerY};
+    return {x:fuel_map.length-1-myTowerX, y:myTowerY};
+}
+export default enemyTowerLocation;
