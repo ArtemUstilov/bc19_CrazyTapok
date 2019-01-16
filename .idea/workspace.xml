@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a11d43a4-5139-49e4-b5f9-edfec01c2433" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue/distance.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/distance.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue/point.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/point.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue/mapScan.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/mapScan.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue/robot.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/robot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/potentialField/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/potentialField/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/potentialField/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/potentialField/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/replay.bc19" beforeDir="false" afterPath="$PROJECT_DIR$/replay.bc19" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="robot.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="robot.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/robot.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="43" column="56" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
+            <state relative-caret-position="346">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -37,8 +34,8 @@
       <file leaf-file-name="distance.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/distance.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="58" column="13" lean-forward="true" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
+            <state relative-caret-position="142">
+              <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -51,15 +48,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
               <caret line="1" column="8189" selection-start-line="1" selection-start-column="8189" selection-end-line="1" selection-end-column="8189" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="distTest.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blue/distTest.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="36" selection-start-line="36" selection-end-line="64" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -82,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mapScan.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mapScan.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blue/mapScan.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="17">
+              <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -114,9 +102,10 @@
         <option value="$PROJECT_DIR$/potentialField/style.css" />
         <option value="$PROJECT_DIR$/potentialField/index.js" />
         <option value="$PROJECT_DIR$/blue/distTest.js" />
-        <option value="$PROJECT_DIR$/blue/distance.js" />
         <option value="$PROJECT_DIR$/blue/point.js" />
+        <option value="$PROJECT_DIR$/blue/distance.js" />
         <option value="$PROJECT_DIR$/blue/robot.js" />
+        <option value="$PROJECT_DIR$/blue/mapScan.js" />
       </list>
     </option>
   </component>
@@ -160,11 +149,6 @@
               <item name="new_bot" type="b2602c69:ProjectViewProjectNode" />
               <item name="new_bot" type="462c0819:PsiDirectoryNode" />
               <item name="blue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="new_bot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="new_bot" type="462c0819:PsiDirectoryNode" />
-              <item name="potentialField" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="new_bot" type="b2602c69:ProjectViewProjectNode" />
@@ -217,17 +201,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1547461319287</updated>
-      <workItem from="1547461320599" duration="50065000" />
+      <workItem from="1547461320599" duration="51453000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50065000" />
+    <option name="totallyTimeSpent" value="51453000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.25285172" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.25285172" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
@@ -235,7 +220,7 @@
       <window_info anchor="bottom" id="Run" order="6" weight="0.3293011" />
       <window_info id="npm" order="0" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.3293011" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.3293011" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39919356" />
       <window_info anchor="bottom" id="Find" order="5" />
@@ -255,20 +240,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/blue/distTest.js</url>
-          <line>61</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/blue/distTest.js</url>
-          <line>62</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="54" />
     </breakpoint-manager>
   </component>
@@ -311,13 +282,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blue/mapScan.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/potentialField/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -348,10 +312,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blue/distance.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="58" column="13" lean-forward="true" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
+        <state relative-caret-position="142">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blue/robot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -363,13 +337,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blue/robot.js">
+    <entry file="file://$PROJECT_DIR$/blue/mapScan.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="43" column="56" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
         </state>
       </provider>
     </entry>

@@ -1,5 +1,4 @@
 import {BCAbstractRobot, SPECS} from 'battlecode';
-import nav from './nav.js';
 import Point from './point.js'
 import path from './distance.js'
 let step = -1;
@@ -20,7 +19,6 @@ class MyRobot extends BCAbstractRobot {
             this.updatePath(path(this.map, this.position, new Point(20, 20)))
         }else if(!this.map[20][20])
             this.log('stay')
-        // this.log(this.map)
     }
     updatePath(path){
         this.currentPath = path;
