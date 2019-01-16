@@ -1,6 +1,8 @@
 import {BCAbstractRobot, SPECS} from 'battlecode';
 import Point from './point.js'
 import path from './distance.js'
+import {Combat as Crusader, Combat as Preacher, Combat as Prophet} from './combat.js'
+import {Piligrim} from './piligrim.js'
 let step = -1;
 
 class MyRobot extends BCAbstractRobot {
@@ -22,6 +24,20 @@ class MyRobot extends BCAbstractRobot {
             this.updatePath(path(this.map, this.position, new Point(20, 20)))
         }else if(!this.map[20][20])
             this.log('stay')
+        switch (this.me.unit) {
+            case SPECS.PILGRIM:
+                this.unit = new Piligrim(this);
+                break;
+            case SPECS.CRUSADER:
+                this.unit = new Crusader(this);
+                break;
+            case SPECS.PREACHER:
+                this.unit = new Preacher(this);
+                break;
+            case SPECS.PROPHET:
+                this.unit = new Prophet(this);
+                break;
+        }
     }
     updatePath(path){
         this.currentPath = path;
@@ -62,13 +78,14 @@ class MyRobot extends BCAbstractRobot {
         if(!step)
            this.my_constructor();
         this.updatePosition();
-        if(this.me.unit !== SPECS.CASTLE) {
-            if(this.isGoing) {
-                return this.step();
-            }
-        }
-        else if(!step)
-            return this.buildUnit(SPECS.CRUSADER, 1, 0);
+        this.unit.do_someth();
+        // if(this.me.unit !== SPECS.CASTLE) {
+        //     if(this.isGoing) {
+        //         return this.step();
+        //     }
+        // }
+        // else if(!step)
+        //     return this.buildUnit(SPECS.CRUSADER, 1, 0);
     }
     makeHomeCordinates(){
         if(this.me.unit == SPECS.CASTLE){
