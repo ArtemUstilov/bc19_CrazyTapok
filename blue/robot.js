@@ -11,11 +11,11 @@ class MyRobot extends BCAbstractRobot {
     }
     my_constructor(){
         this.width = this.map.length;
-        this.potField = new Array(this.width).fill([]).map(()=>new Array(this.width)).map(x=>x.fill(0));
-        this.initField(this.potField, this.map);
-        this.impulse({x:20, y:20}, Math.round(Math.sqrt(nav.sqDist(this.me, {x:20, y:20}))), -2);
-        this.log(this.potField.toString());
-        this.log(this.width)
+        // this.potField = new Array(this.width).fill([]).map(()=>new Array(this.width)).map(x=>x.fill(0));
+        // this.initField(this.potField, this.map);
+        // this.impulse({x:20, y:20}, Math.round(Math.sqrt(nav.sqDist(this.me, {x:20, y:20}))), -4);
+        // this.log(this.potField.toString());
+        // this.log(this.width)
     }
     initField(){
         for(let i = 0; i < this.width; i++)
@@ -38,27 +38,40 @@ class MyRobot extends BCAbstractRobot {
     }
     step(){
         let cord = {
-            cor:{x:0, y:0},
-            val: this.potField[this.me.x][this.me.y]
+            cor:{x:-1, y:-1},
+            val: -20000
         };
+        if(this.me.x == 20 && this.me.y == 20)
+            return;
+        let robot_map = this.getVisibleRobotMap();
         for(let i = Math.max(this.me.x-1, 0); i <= Math.min(this.me.x+1, this.width-1); i++){
             for(let j = Math.max(this.me.y-1, 0); j <= Math.min(this.me.y+1, this.width-1); j++){
+                if(i == this.me.x && j == this.me.y)
+                    continue;
                 let val = this.potField[i][j];
-               cord = cord.val < val ? cord : {cor:{x: i-this.me.x, y: j-this.me.y},val:val}
+                this.log(val + " " + i + " " + j);
+                //if(!robot_map[i][j])
+                    if(cord.val < val) {
+                        this.log('changed')
+                        cord = {cor: {x: i - this.me.x, y: j - this.me.y}, val: val}
+                    }
             }
         }
-        this.log(`Cords: ${this.me.x} ${this.me.y} move ${cord.cor.x} ${cord.cor.y} and map size is ${this.width}`)
+        this.log(`Cords: ${this.me.x} ${this.me.y} move ${cord.cor.x} ${cord.cor.y} and max val is ${cord.val}`)
+        if(cord.cor.x == 0 && cord.cor.y == 0)
+            return;
         return cord.cor;
     }
     turn(){
         step++;
-        if(!step)
-            this.my_constructor();
-        if(this.me.unit !== SPECS.CASTLE) {
-            let cords = this.step();
-            return this.move(cords.x, cords.y);
-        }
-        else if(!step)
-            return this.buildUnit(SPECS.CRUSADER, 1, 0);
+        // if(!step)
+        //     this.my_constructor();
+        // if(this.me.unit !== SPECS.CASTLE) {
+        //     let cords = this.step();
+        //     if(cords)
+        //         return this.move(cords.x, cords.y);
+        // }
+        // else if(!step)
+        //     return this.buildUnit(SPECS.CRUSADER, 1, 0);
     }
 }
