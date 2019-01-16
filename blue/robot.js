@@ -10,7 +10,7 @@ class MyRobot extends BCAbstractRobot {
         this.isGoing = false;
         this.destination = undefined;
         this.home;
-        this.castles;
+        this.castles = [];
     }
     my_constructor(){
         this.updatePosition();
@@ -84,7 +84,7 @@ class MyRobot extends BCAbstractRobot {
                         let p = new Point(robot.x, robot.y);
                         if(robot.unit == SPECS.CASTLE)
                             this.castles.push(p);
-                        this.home = p
+                        this.home = p;
                         return;
                     }
                 }

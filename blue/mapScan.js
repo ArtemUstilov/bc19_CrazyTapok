@@ -17,10 +17,6 @@ function enemyTowerLocation(myTowerX,myTowerY,fuel_map) {
     return {x:fuel_map.length-1-myTowerX, y:myTowerY};
 }
 
-function findClosestFuel(myTowerX, myTowerY, fuel_map, ignore){
-    let map = fuel_map;
-}
-
 function findClosestResource(myTowerX, myTowerY, resMap, ignore) {
     let resources =[];
     let lengths =[];
