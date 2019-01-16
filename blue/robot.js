@@ -9,10 +9,13 @@ class MyRobot extends BCAbstractRobot {
         this.currentPath = [];
         this.isGoing = false;
         this.destination = undefined;
+        this.home;
+        this.castles;
     }
     my_constructor(){
         this.updatePosition();
         this.width = this.map.length;
+        this.makeHomeCordinates();
         this.speed = this.me.unit == SPECS.CRUSADER ? 9 : 4;
         if(this.me.unit != SPECS.CASTLE && this.map[20][20]) {
             this.log('send' + this.position)
@@ -66,5 +69,26 @@ class MyRobot extends BCAbstractRobot {
         }
         else if(!step)
             return this.buildUnit(SPECS.CRUSADER, 1, 0);
+    }
+    makeHomeCordinates(){
+        if(this.me.unit == SPECS.CASTLE){
+            this.home = new Point(this.me.x, this.me.y);
+            return;
+        }
+        for(let i = Math.max(0, this.me.x - 1); i <= Math.min(this.width,this.me.x + 1); i++){
+            for(let j = Math.max(0,this.me.y - 1); j <= Math.min(this.width,this.me.y + 1); j++) {
+                let robot = this.getVisibleRobotMap()[j][i];
+                if (robot > 0) {
+                    robot = this.getRobot(robot);
+                    if (robot.unit == SPECS.CASTLE || robot.unit == SPECS.CHURCH) {
+                        let p = new Point(robot.x, robot.y);
+                        if(robot.unit == SPECS.CASTLE)
+                            this.castles.push(p);
+                        this.home = p
+                        return;
+                    }
+                }
+            }
+        }
     }
 }
