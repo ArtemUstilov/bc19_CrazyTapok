@@ -2,7 +2,7 @@ import {BCAbstractRobot, SPECS} from 'battlecode';
 import Point from './point.js'
 import path from './distance.js'
 import {Combat as Crusader, Combat as Preacher, Combat as Prophet} from './combat.js'
-import {Piligrim} from './piligrim.js'
+import Piligrim from './piligrim.js'
 let step = -1;
 
 class MyRobot extends BCAbstractRobot {
@@ -19,12 +19,7 @@ class MyRobot extends BCAbstractRobot {
         this.width = this.map.length;
         this.makeHomeCordinates();
         this.speed = this.me.unit == SPECS.CRUSADER ? 9 : 4;
-        if(this.me.unit != SPECS.CASTLE && this.map[20][20]) {
-            this.log('send' + this.position)
-            this.updatePath(path(this.map, this.position, new Point(20, 20)))
-        }else if(!this.map[20][20])
-            this.log('stay')
-        switch (this.me.unit) {
+          switch (this.me.unit) {
             case SPECS.PILGRIM:
                 this.unit = new Piligrim(this);
                 break;
@@ -38,6 +33,11 @@ class MyRobot extends BCAbstractRobot {
                 this.unit = new Prophet(this);
                 break;
         }
+        if(this.me.unit == SPECS.PILGRIM) {
+            this.log('send' + this.position)
+            this.unit.do_someth(this.fuel_map,[]);
+        }
+      
     }
     updatePath(path){
         this.currentPath = path;
@@ -78,14 +78,19 @@ class MyRobot extends BCAbstractRobot {
         if(!step)
            this.my_constructor();
         this.updatePosition();
-        this.unit.do_someth();
-        // if(this.me.unit !== SPECS.CASTLE) {
-        //     if(this.isGoing) {
-        //         return this.step();
-        //     }
-        // }
-        // else if(!step)
-        //     return this.buildUnit(SPECS.CRUSADER, 1, 0);
+        if(this.me.unit == SPECS.PILGRIM)
+            {
+               
+            }
+        //this.unit.do_someth();
+         if(this.me.unit !== SPECS.CASTLE) {
+             if(this.isGoing) {
+                 return this.step();
+             }
+         }
+         else if(!step)
+             return this.buildUnit(2, 1, 0);
+        //if(step==1&& this.me.unit == 0)return this.give(1, 0, 20, 20);
     }
     makeHomeCordinates(){
         if(this.me.unit == SPECS.CASTLE){

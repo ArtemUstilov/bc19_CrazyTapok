@@ -32,9 +32,7 @@ function findClosestResource(myTowerX, myTowerY, resMap, ignore) {
             }
         }
     }
-    return resources[lengths.indexOf(Array.min(lengths))];
+    return resources[lengths.indexOf(Math.min(...lengths))];
 }
-Array.prototype.min = function(array){
-    return Math.min.apply(Math, array);
-};
+
 export default findClosestResource;
