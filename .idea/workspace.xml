@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a11d43a4-5139-49e4-b5f9-edfec01c2433" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue/distance.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/distance.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue/point.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/point.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue/robot.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/robot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/potentialField/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/potentialField/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/potentialField/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/potentialField/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/replay.bc19" beforeDir="false" afterPath="$PROJECT_DIR$/replay.bc19" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="robot.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="robot.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blue/robot.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
+            <state relative-caret-position="227">
+              <caret line="43" column="56" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -31,11 +34,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="distance.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="distance.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/distance.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+            <state relative-caret-position="516">
+              <caret line="58" column="13" lean-forward="true" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/potentialField/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="8189" selection-start-line="1" selection-start-column="8189" selection-end-line="1" selection-end-column="8189" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="distTest.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blue/distTest.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="36" selection-start-line="36" selection-end-line="64" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/potentialField/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -43,8 +76,8 @@
       <file leaf-file-name="point.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/point.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            <state relative-caret-position="312">
+              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -80,9 +113,10 @@
         <option value="$PROJECT_DIR$/potentialField/index.html" />
         <option value="$PROJECT_DIR$/potentialField/style.css" />
         <option value="$PROJECT_DIR$/potentialField/index.js" />
+        <option value="$PROJECT_DIR$/blue/distTest.js" />
+        <option value="$PROJECT_DIR$/blue/distance.js" />
         <option value="$PROJECT_DIR$/blue/point.js" />
         <option value="$PROJECT_DIR$/blue/robot.js" />
-        <option value="$PROJECT_DIR$/blue/distance.js" />
       </list>
     </option>
   </component>
@@ -130,6 +164,11 @@
             <path>
               <item name="new_bot" type="b2602c69:ProjectViewProjectNode" />
               <item name="new_bot" type="462c0819:PsiDirectoryNode" />
+              <item name="potentialField" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="new_bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new_bot" type="462c0819:PsiDirectoryNode" />
               <item name="red" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -141,7 +180,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/blue/distance.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/blue/distTest.js" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -166,7 +205,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="NodeJSConfigurationType" factoryName="Node.js" path-to-js-file="blue/distance.js" working-dir="$PROJECT_DIR$" />
+    <configuration name="Unnamed" type="NodeJSConfigurationType" factoryName="Node.js" path-to-js-file="blue/distTest.js" working-dir="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -178,12 +217,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1547461319287</updated>
-      <workItem from="1547461320599" duration="42972000" />
+      <workItem from="1547461320599" duration="50065000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42972000" />
+    <option name="totallyTimeSpent" value="50065000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -218,13 +257,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/blue/distance.js</url>
-          <line>58</line>
+          <url>file://$PROJECT_DIR$/blue/distTest.js</url>
+          <line>61</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="29" />
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/blue/distTest.js</url>
+          <line>62</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="31" />
+      <option name="time" value="54" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -266,34 +311,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/potentialField/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/potentialField/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/potentialField/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blue/point.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blue/mapScan.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -301,20 +318,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blue/robot.js">
+    <entry file="file://$PROJECT_DIR$/potentialField/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/potentialField/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/potentialField/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="8189" selection-start-line="1" selection-start-column="8189" selection-end-line="1" selection-end-column="8189" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blue/distTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="36" selection-start-line="36" selection-end-line="64" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blue/distance.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+        <state relative-caret-position="516">
+          <caret line="58" column="13" lean-forward="true" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blue/point.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blue/robot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="43" column="56" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -20,9 +20,9 @@ export default class Point {
         //is this point within square
         return this.x >= 0 && this.y >= 0 && this.x < size && this.y < size;
     }
-    distance(p){
+    distanceSq(p){
         //distance from a to b
-        return Math.sqrt(Math.pow(p.x-this.x, 2) + Math.pow(p.y - this.y, 2));
+        return Math.pow(p.x-this.x, 2) + Math.pow(p.y - this.y, 2);
     }
     deltaArray(p){
         //shift from a to b

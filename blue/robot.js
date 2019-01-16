@@ -20,6 +20,7 @@ class MyRobot extends BCAbstractRobot {
             this.updatePath(path(this.map, this.position, new Point(20, 20)))
         }else if(!this.map[20][20])
             this.log('stay')
+        // this.log(this.map)
     }
     updatePath(path){
         this.currentPath = path;
@@ -35,16 +36,25 @@ class MyRobot extends BCAbstractRobot {
         this.position = new Point(this.me.x, this.me.y);
     }
     step(){
-        let nextPoint = this.currentPath.shift();
-        // while(this.currentPath.length && this.position.distance(nextPoint) < 9) {
-        //         nextPoint = this.currentPath.shift();
-        // }
-        this.log(this.position + " " + nextPoint)
-        this.log(this.currentPath)
+        let nextPoint;
+        let possiblePoints = [];
+        while(this.currentPath.length && this.position.distanceSq(this.currentPath[0]) <= this.speed) {
+                possiblePoints.push(this.currentPath.shift());
+        }
+        for(let i = possiblePoints.length-1; i >= 0; i--){
+            if(!this.getVisibleRobotMap()[possiblePoints[i].y][possiblePoints[i].x]){
+                nextPoint = possiblePoints[i];
+                for(let j = possiblePoints.length-1; j >= i+1 ; j--){
+                    this.currentPath.unshift(possiblePoints[j]);
+                }
+                break;
+            }
+        }
         if(!this.currentPath.length)
             this.removePath();
-        //this.log(this.position.distance(nextPoint))
-        return this.position.deltaArray(nextPoint);
+        if(!nextPoint)
+            return;
+        return this.move(...this.position.deltaArray(nextPoint))
     }
     turn(){
         step++;
@@ -53,7 +63,7 @@ class MyRobot extends BCAbstractRobot {
         this.updatePosition();
         if(this.me.unit !== SPECS.CASTLE) {
             if(this.isGoing) {
-                return this.move(...this.step());
+                return this.step();
             }
         }
         else if(!step)
