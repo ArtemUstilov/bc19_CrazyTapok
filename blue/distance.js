@@ -22,35 +22,39 @@ function waveAlgorithm(map, pos, dest){
     let lastStep = dest;
     let path = [];
     while(!lastStep.equal(pos)){
-        path.unshift(lastStep);
-        lastStep = decrementedCell(mapSheme, lastStep);
+       path.unshift(lastStep);
+       lastStep = decrementedCell(mapSheme, lastStep);
     }
     //path it is array of points
     return path;
 }
+function scaleMap(map, pos, dest){
+    let size = Math.min(...pos.deltaArray(dest));
+    //map = map.map(row=>row.splice(0, pos.y))
+}
 function incrementNeighbors(mapSheme, map, wave, pos){
     //icnrement all nearby to wave cells
     let nextWave = [];
-    wave.forEach(p=>{
-        let lastValue = mapSheme[wave[0].x][wave[0].y];
-        let neighbors = getNearbyCells(p, map.length)
-            .filter(n => map[n.x][n.y] && !mapSheme[n.x][n.y] && !n.equal(pos))
-        neighbors.forEach(n => mapSheme[n.x][n.y] = lastValue + 1)
-        nextWave.push(...neighbors);
-    })
-    //returns all this neighbors as next wave
+    if(!wave || !wave.length)return;
+    let value = mapSheme[wave[0].x][wave[0].y] + 1;
+    for(let i = 0; i < wave.length; i++){
+        let neighbors = getNearbyCells(wave[i], map.length, map, mapSheme, pos)
+        for(let j = 0; j < neighbors.length; j++){
+            mapSheme[neighbors[j].x][neighbors[j].y] = value;
+            nextWave.push(neighbors[j]);
+        }
+    }
     return nextWave;
 }
-function getNearbyCells(p, mapSize){
+function getNearbyCells(p, mapSize, map, mapSheme,pos){
     //gets nearby cells thats is within the map
-    let t = [[-1,0],[1,0],[0,-1],[0,1]]
-        .map(t=>p.shift(t[0],t[1]))
-        .filter(x=>x.insideSquare(mapSize));
+    let t = [p.shift(-1,0), p.shift(1,0), p.shift(0, -1), p.shift(1)]
+        .filter(x=>x.insideSquare(mapSize)&&map[x.x][x.y]&&!mapSheme[x.x][x.y]&&!x.equal(pos));
     return t;
 }
 function decrementedCell(mapSheme, lastStep) {
     //finds cell that has n-1 value to find all path to pos
-    let t = getNearbyCells(lastStep, mapSheme.length)
+    let t = [lastStep.shift(1,0),lastStep.shift(-1,0),lastStep.shift(0,-1),lastStep.shift(0,1)]
     let f = t.find((cell)=>mapSheme[cell.x][cell.y] == mapSheme[lastStep.x][lastStep.y] - 1)
     return f;
 }

@@ -15,9 +15,11 @@ class MyRobot extends BCAbstractRobot {
         this.updatePosition();
         this.width = this.map.length;
         this.speed = this.me.unit == SPECS.CRUSADER ? 9 : 4;
-        if(this.map[20][20]) {
+        if(this.me.unit != SPECS.CASTLE && this.map[20][20]) {
+            this.log('send' + this.position)
             this.updatePath(path(this.map, this.position, new Point(20, 20)))
-        }
+        }else if(!this.map[20][20])
+            this.log('stay')
     }
     updatePath(path){
         this.currentPath = path;
@@ -34,12 +36,14 @@ class MyRobot extends BCAbstractRobot {
     }
     step(){
         let nextPoint = this.currentPath.shift();
-        // while(this.currentPath.length &&
-        //     this.position.distance(nextPoint) <= this.speed)
-        //     nextPoint = this.currentPath.shift();
-        // this.log(this.position.distance(nextPoint) + " " + this.speed)
-        if(nextPoint.equal(this.destination))
+        // while(this.currentPath.length && this.position.distance(nextPoint) < 9) {
+        //         nextPoint = this.currentPath.shift();
+        // }
+        this.log(this.position + " " + nextPoint)
+        this.log(this.currentPath)
+        if(!this.currentPath.length)
             this.removePath();
+        //this.log(this.position.distance(nextPoint))
         return this.position.deltaArray(nextPoint);
     }
     turn(){
