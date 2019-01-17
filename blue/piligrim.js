@@ -34,13 +34,12 @@ export default class Piligrim extends WalkingRobot {
 
     do_someth(ign) {
         this.updatePosition();
-
         this.log(this.actionType);
         switch (this.actionType) {
             case 0:
                 return this.goMine(ign);
             case 1:
-                if (this.isFull(90,100))
+                if (this.isFull(90,90))
                     this.actionType = 2;
                 return this.robot.mine();
             case 2:
@@ -49,16 +48,6 @@ export default class Piligrim extends WalkingRobot {
                 this.actionType = 0;
                 return this.robot.give(...this.position.deltaArray(this.home), this.robot.me.karbonite, this.robot.me.fuel);
         }
-        if (!this.isGoing && !this.readyToMine) this.goMine(ign);
-        if (this.readyToMine && this.robot.me.fuel < 91) {
-            this.log(this.position.x)
-            return this.robot.mine()
-        } else if (this.isGoing) {
-            return this.step();
-        } else {
-            this.log(this.home + "  " + this.findFreePlace(this.home).toString());
-            this.updatePath(this.findFreePlace(this.home)[0]);
-            return this.step();
-        }
+
     }
 }
