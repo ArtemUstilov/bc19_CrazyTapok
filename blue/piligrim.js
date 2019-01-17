@@ -43,7 +43,7 @@ export default class Piligrim extends WalkingRobot {
 
     goHome() {
         if (this.position.distanceSq(this.home) > 2)
-            this.updatePath(this.findFreePlace(this.home)[0]);
+            this.updatePath(this.findFreePlace(this.home, 1)[0], this.robot.getVisibleRobotMap());
         return this.step();
     }
     do_someth(ign) {
