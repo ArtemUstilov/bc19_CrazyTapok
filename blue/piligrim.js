@@ -4,6 +4,8 @@ import findClosestResource from './mapScan.js';
 
 export default class Piligrim {
     constructor(_this){
+          this.currentPath = [];
+        
        this._this=_this;
        this._this.isGoing = false;
       this._this.readyToMine = false;
@@ -18,7 +20,8 @@ export default class Piligrim {
         this._this.currentPath = [];
        this._this.destination = undefined;
      this._this.isGoing = false;
-       /* if(this._this.fuel_map[findClosestResource(this._this.me.x, this._this.me.y, this._this.fuel_map, []).x][findClosestResource(this._this.me.x, this._this.me.y, this._this.fuel_map, []).y]) */ this._this.readyToMine = true;
+    /*   if(this._this.fuel_map[findClosestResource(this._this.me.x, this._this.me.y, this._this.fuel_map, []).x][findClosestResource(this._this.me.x, this._this.me.y, this._this.fuel_map, []).y]) */ this._this.readyToMine = true;
+        this._this.log("fslada"+this._this.readyToMine );
     }
  
     goMine(mapRes, ignore){
@@ -27,6 +30,7 @@ export default class Piligrim {
      
     }
        step(){
+           
         let nextPoint;
         let possiblePoints = [];
         while(this._this.currentPath.length && this._this.position.distanceSq(this._this.currentPath[0]) <= this._this.speed) {
@@ -42,18 +46,27 @@ export default class Piligrim {
             }
         }
         if(!this._this.currentPath.length)
-            this._this.removePath();
+            this.removePath();
         if(!nextPoint)
             return;
+             this._this.log("rewe");
         return this._this.move(...this._this.position.deltaArray(nextPoint))
     }
        do_someth(map, ign){
          this.goMine(map, ign);
-             if(this.isGoing) {
-                 return this._this.step();
+            
+           
+       if(this._this.readyToMine){ 
+           this._this.log("ewqeq");
+           return this._this.mine()
+       }else if(this._this.isGoing) { 
+                  this._this.log(this._this.readyToMine);
+                 return this.step();
+                
+                 
              }
-         else if(this._this.readyToMine){ this._this.log("ewqeq");return this._this.mine();};
+       }
 
         
-    }
+    
 }
