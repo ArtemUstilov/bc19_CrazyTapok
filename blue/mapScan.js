@@ -20,7 +20,7 @@ function enemyTowerLocation(myTowerX,myTowerY,fuel_map) {
 function findClosestResource(myTowerX, myTowerY, resMap, ignore) {
     let resources =[];
     let lengths =[];
-    let map = resMap;
+    let map = resMap
     if(ignore.length) {
         ignore.forEach((el)=>{map[el.x][el.y]=false});
     }

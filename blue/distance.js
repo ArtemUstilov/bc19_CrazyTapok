@@ -5,6 +5,8 @@ export default waveAlgorithm;
 function waveAlgorithm(map, pos, dest){
     //init map where in every cell its path from pos
     //if its unpassable cell value is -1
+    if(pos.distanceSq(dest) < 2)
+        return [dest];
     let mapSheme = new Array(map.length)
         .fill([])
         .map(()=>new Array(map.length))
