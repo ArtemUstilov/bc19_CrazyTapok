@@ -84,8 +84,19 @@ class MyRobot extends BCAbstractRobot {
         //         return this.step();
         //     }
         // }
-        // else if(!step)
-        //     return this.buildUnit(SPECS.CRUSADER, 1, 0);
+        if(this.me.unit == SPECS.CASTLE && !step)
+            return this.buildUnit(SPECS.CRUSADER, 1, 0);
+    }
+    findFreePlace(){
+        let freeP = [];
+        let robotsMap = this.getVisibleRobotMap();
+        for(let i = Math.max(0, this.me.x - 1); i <= Math.min(this.width,this.me.x + 1); i++) {
+            for (let j = Math.max(0, this.me.y - 1); j <= Math.min(this.width, this.me.y + 1); j++) {
+                if(!robotsMap[j][i] && this.map[j][i])
+                    freeP.push(new Point(i,j));
+            }
+        }
+        return freeP;
     }
     makeHomeCordinates(){
         if(this.me.unit == SPECS.CASTLE){
