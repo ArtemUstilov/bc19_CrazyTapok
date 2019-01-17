@@ -7,27 +7,46 @@ export default class Castle extends Creature {
     constructor(_this) {
         super(_this);
         this.ignoreList = [];
-        this.resMap = this.robot.karbonite_map;
+        this.resMap = [];
+        this.closestResource = undefined;
         this.makeResMap();
-        this.closestResource;
     }
 
     do_someth(ign) {
         
     }
     findNewClosest(){
-        let closest =findClosestResource(this.robot.me.x, this.robot.me.y, this.resMap, this.ignoreList);
-        this.closestResource = new Point(...Object.values(closest));
-        this.ignoreList.push(closest);
+        this.closestResource = findClosestResource();
+        this.ignoreList.push(this.closestResource);
+    }
+    findClosestResource() {
+        let resources =[];
+        let lengths =[];
+        if(this.ignoreList.length) {
+            this.ignoreList.forEach((el)=>{this.resMap[el.x][el.y]=false});
+        }
+        for(let i = 0; i<this.width;i++) {
+            for(let j = 0; j<this.width;j++) {
+                if(this.resMap[i][j]) {
+                    resources.push(new Point(j,i));
+                    lengths.push(Math.sqrt(((i-this.position.x)*(i-this.position.x))
+                        +((j-this.position.y)*(j-this.position.y))));
+                }
+            }
+        }
+        return resources[lengths.indexOf(Math.min(...lengths))];
     }
     makeResMap() {
-        for (let i = 0; i < this.robot.fuel_map.length; i++) {
-            for (let j = 0; j < this.robot.fuel_map.length; j++) {
-                if (this.robot.fuel_map[i][j]) {
+        this.resMap = new Array(this.width)
+            .fill([])
+            .map(()=>new Array(this.width))
+            .map(c=>c.fill(false));
+        for (let i = 0; i < this.width; i++) {
+            for (let j = 0; j < this.width; j++) {
+                if (this.robot.fuel_map[i][j] || this.robot.karbonite_map[i][j]) {
                     this.resMap[i][j] = true;
                 }
             }
         }
-
     }
 }

@@ -2,7 +2,13 @@
 //resource to read about
 //https://habr.com/ru/post/264189/
 export default waveAlgorithm;
-function waveAlgorithm(map, pos, dest){
+function waveAlgorithm(map, pos, dest, robotsNearby){
+    let applyRobots = ()=>true;
+    if(robotsNearby){
+        applyRobots = (y,x)=>{
+            return (!robotsNearby[y][x]);
+        }
+    }
     //init map where in every cell its path from pos
     //if its unpassable cell value is -1
     if(pos.distanceSq(dest) < 2)
@@ -12,7 +18,7 @@ function waveAlgorithm(map, pos, dest){
         .map(()=>new Array(map.length))
         .map(c=>c.fill(0))
         .map((row,x)=>row
-            .map((c,y)=>!map[y][x] ? -1 : 0))
+            .map((c,y)=>!map[y][x] && applyRobots(y,x) ? -1 : 0))
     //wave its all cells whose neighbors need to be incremented
     let wave = [pos];
     //loop that increments all cells until we come to pos from dest

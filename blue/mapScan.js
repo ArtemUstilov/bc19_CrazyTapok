@@ -16,23 +16,3 @@ function enemyTowerLocation(myTowerX,myTowerY,fuel_map) {
         return {x:myTowerX, y:fuel_map.length-1-myTowerY};
     return {x:fuel_map.length-1-myTowerX, y:myTowerY};
 }
-
-function findClosestResource(myTowerX, myTowerY, resMap, ignore) {
-    let resources =[];
-    let lengths =[];
-    let map = resMap
-    if(ignore.length) {
-        ignore.forEach((el)=>{map[el.x][el.y]=false});
-    }
-    for(let i = 0; i<map.length;i++) {
-        for(let j = 0; j<map.length;j++) {
-            if(map[i][j]) {
-                resources.push({x:j,y:i});
-                lengths.push(Math.sqrt(((i-myTowerY)*(i-myTowerY))+((j-myTowerX)*(j-myTowerX))));
-            }
-        }
-    }
-    return resources[lengths.indexOf(Math.min(...lengths))];
-}
-
-export default findClosestResource;
