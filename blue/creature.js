@@ -6,7 +6,7 @@ export default class Creature {
         this.robot = _this;
         this.log = _this.log.bind(_this);
         this.castles = [];
-        this.position = undefined;
+        this.position;
         this.width = this.robot.map.length;
         this.home;
         this.updatePosition();
@@ -40,20 +40,22 @@ export default class Creature {
         let freeP = [];
         let robotsMap = this.robot.getVisibleRobotMap();
         let x, y;
-        if(dest){
+        if (dest) {
             x = dest.x;
             y = dest.y;
-        }else{
-           x = this.position.x;
-           y = this.position.y;
+        } else {
+            x = this.position.x;
+            y = this.position.y;
         }
+        if(!robotsMap)
+            this.log('ROBOTS MAP CAN NOT WORK!!!!!!')
         for (let i = Math.max(0, x - range); i <= Math.min(this.width, x + range); i++) {
             for (let j = Math.max(0, y - range); j <= Math.min(this.width, y + range); j++) {
-                if (robotsMap[j][i] <= 0 && this.robot.map[j][i])
+                if (robotsMap[j][i] <= 0 && this.robot.map[j][i] && (range == 1 || range*range >= new Point(i,j).distanceSq(new Point(x,y))))
                     freeP.push(new Point(i, j));
             }
         }
-        if(freeP.length < 1)
+        if (freeP.length < 1)
             this.log("WOOOOOOOOOOOOW CANT FIND FREE SPACE, GEY")
         return freeP;
     }

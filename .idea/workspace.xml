@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a11d43a4-5139-49e4-b5f9-edfec01c2433" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/blue/crusader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue/castle.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/castle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue/combat.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/combat.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue/creature.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/creature.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue/mapScan.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/mapScan.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue/piligrim.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/piligrim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue/crusader.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/crusader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue/distance.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/distance.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue/robot.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/robot.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue/walkingRobot.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/walkingRobot.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/replay.bc19" beforeDir="false" afterPath="$PROJECT_DIR$/replay.bc19" afterDir="false" />
@@ -25,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="robot.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="robot.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blue/robot.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+            <state relative-caret-position="446">
+              <caret line="44" column="1" lean-forward="true" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -37,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="creature.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="creature.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/creature.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="272">
+              <caret line="53" column="137" selection-start-line="53" selection-start-column="137" selection-end-line="53" selection-end-column="137" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -52,8 +49,8 @@
       <file leaf-file-name="walkingRobot.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/walkingRobot.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+            <state relative-caret-position="306">
+              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -73,10 +70,10 @@
       <file leaf-file-name="crusader.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/crusader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="74" column="44" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
+            <state>
+              <caret lean-forward="true" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,8 +82,8 @@
       <file leaf-file-name="distance.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/distance.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+            <state relative-caret-position="106">
+              <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -106,8 +103,8 @@
       <file leaf-file-name="castle.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/castle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="238">
+              <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -167,15 +164,15 @@
         <option value="$PROJECT_DIR$/blue/point.js" />
         <option value="$PROJECT_DIR$/blue/home.js" />
         <option value="$PROJECT_DIR$/blue/Combat.js" />
-        <option value="$PROJECT_DIR$/blue/distance.js" />
         <option value="$PROJECT_DIR$/blue/castle.js" />
         <option value="$PROJECT_DIR$/blue/combat.js" />
-        <option value="$PROJECT_DIR$/blue/walkingRobot.js" />
         <option value="$PROJECT_DIR$/blue/mapScan.js" />
         <option value="$PROJECT_DIR$/blue/piligrim.js" />
-        <option value="$PROJECT_DIR$/blue/robot.js" />
-        <option value="$PROJECT_DIR$/blue/crusader.js" />
+        <option value="$PROJECT_DIR$/blue/distance.js" />
+        <option value="$PROJECT_DIR$/blue/walkingRobot.js" />
         <option value="$PROJECT_DIR$/blue/creature.js" />
+        <option value="$PROJECT_DIR$/blue/crusader.js" />
+        <option value="$PROJECT_DIR$/blue/robot.js" />
       </list>
     </option>
   </component>
@@ -277,12 +274,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1547461319287</updated>
-      <workItem from="1547461320599" duration="83101000" />
+      <workItem from="1547461320599" duration="87466000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83101000" />
+    <option name="totallyTimeSpent" value="87466000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -433,16 +430,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blue/distance.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blue/mapScan.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -460,26 +447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blue/castle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blue/robot.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blue/combat.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -487,20 +454,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blue/crusader.js">
+    <entry file="file://$PROJECT_DIR$/blue/distance.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="74" column="44" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
+        <state relative-caret-position="106">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blue/walkingRobot.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        <state relative-caret-position="306">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
@@ -509,10 +476,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blue/creature.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="272">
+          <caret line="53" column="137" selection-start-line="53" selection-start-column="137" selection-end-line="53" selection-end-column="137" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blue/crusader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blue/castle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blue/robot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="44" column="1" lean-forward="true" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>

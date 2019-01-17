@@ -10,7 +10,6 @@ class MyRobot extends BCAbstractRobot {
     constructor() {
         super();
     }
-
     my_constructor() {
         switch (this.me.unit) {
             case SPECS.PILGRIM:

@@ -9,8 +9,8 @@ export default class WalkingRobot extends Creature{
         this.currentPath = [];
         this.speed = this.robot.me.unit == SPECS.CRUSADER ? 9 : 4;
     }
-    updatePath(dest) {
-        this.currentPath = waveAlgorithm(this.robot.map, this.position, dest);
+    updatePath(dest, robotsMap) {
+        this.currentPath = waveAlgorithm(this.robot.map, this.position, dest, robotsMap);
         this.destination = this.currentPath[this.currentPath.length - 1];
         this.isGoing = true;
     }

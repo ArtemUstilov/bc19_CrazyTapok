@@ -6,7 +6,7 @@ function waveAlgorithm(map, pos, dest, robotsNearby){
     let applyRobots = ()=>true;
     if(robotsNearby){
         applyRobots = (y,x)=>{
-            return (!robotsNearby[y][x]);
+            return (robotsNearby[y][x] <= 0);
         }
     }
     //init map where in every cell its path from pos
