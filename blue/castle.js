@@ -16,8 +16,9 @@ export default class Castle extends Creature {
     do_someth(ign) {
         if(!this.mapIsFull) {
             this.findNewClosest();
-            this.robot.signal(this.closestResource.x + this.closestResource.y, 1);
-            this.log(this.ignoreList);
+            this.robot.signal(this.closestResource.x*1000 +this.closestResource.y, 1);
+            this.log(this.robot.me.signal);
+
 if(this.kek){
     this.kek=false;
     return this.robot.buildUnit(2, 1, 0);
@@ -31,13 +32,13 @@ if(this.kek){
         if(!this.mapIsFull) {
             this.closestResource = this.findClosestResource();
             this.ignoreList.push(this.closestResource);
-            if(this.closestResource==null)this.mapIsFull = true;
         }
     }
 
     findClosestResource() {
         let resources = [];
         let lengths = [];
+
         if (this.ignoreList.length) {
             this.ignoreList.forEach((el) => {
                 this.resMap[el.y][el.x] = false
@@ -52,7 +53,10 @@ if(this.kek){
                 }
             }
         }
-        return resources[lengths.indexOf(Math.min(...lengths))];
+        let res = resources[lengths.indexOf(Math.min(...lengths))];
+        if(res)return res;
+        this.mapIsFull = true;
+        return "end";
     }
 
     makeResMap() {
