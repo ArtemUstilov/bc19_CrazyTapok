@@ -1,5 +1,4 @@
 import Point from './point.js';
-import findClosestResource from './mapScan.js';
 import WalkingRobot from 'walkingRobot.js';
 
 export default class Piligrim extends WalkingRobot {
@@ -8,7 +7,23 @@ export default class Piligrim extends WalkingRobot {
         this.actionType = 0;
         // 0-goMine, 1-readyToMine, 2-goHome, 3-readyToGive
     }
-
+    findClosestResource(myTowerX, myTowerY, resMap, ignore) {
+        let resources =[];
+        let lengths =[];
+        let map = resMap
+        if(ignore.length) {
+            ignore.forEach((el)=>{map[el.x][el.y]=false});
+        }
+        for(let i = 0; i<map.length;i++) {
+            for(let j = 0; j<map.length;j++) {
+                if(map[i][j]) {
+                    resources.push({x:j,y:i});
+                    lengths.push(Math.sqrt(((i-myTowerY)*(i-myTowerY))+((j-myTowerX)*(j-myTowerX))));
+                }
+            }
+        }
+        return resources[lengths.indexOf(Math.min(...lengths))];
+    }
     removePath() {
         super.removePath();
         this.actionType = 1;
@@ -21,7 +36,7 @@ export default class Piligrim extends WalkingRobot {
     }
 
     goMine(ignore) {
-        let point = new Point(...Object.values(findClosestResource(this.position.x, this.position.y, this.robot.fuel_map, [])));
+        let point = new Point(...Object.values(this.findClosestResource(this.position.x, this.position.y, this.robot.fuel_map, [])));
         this.updatePath(point, this.robot.getVisibleRobotMap());
         return this.step();
     }
@@ -31,7 +46,6 @@ export default class Piligrim extends WalkingRobot {
             this.updatePath(this.findFreePlace(this.home)[0]);
         return this.step();
     }
-
     do_someth(ign) {
         this.updatePosition();
         this.log(this.actionType);

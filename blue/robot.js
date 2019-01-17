@@ -1,7 +1,8 @@
 import {BCAbstractRobot, SPECS} from 'battlecode';
-import {Combat as Crusader, Combat as Preacher, Combat as Prophet} from './combat.js'
+import {Combat as Preacher, Combat as Prophet} from './combat.js'
 import Piligrim from './piligrim.js';
 import Castle from './castle.js';
+import Crusader from './crusader.js'
 
 let step = -1;
 
@@ -27,8 +28,8 @@ class MyRobot extends BCAbstractRobot {
             case SPECS.CASTLE:
                 this.unit = new Castle(this);
                 break;
-            default:
-                this.unit = new Crusader(this);
+            //default:
+                //this.unit = new Crusader(this);
         }
     }
 
@@ -37,7 +38,7 @@ class MyRobot extends BCAbstractRobot {
         if (!step)
             this.my_constructor();
         if (this.me.unit == SPECS.CASTLE && !step)
-            return this.buildUnit(SPECS.PILGRIM, 1, 0);
+            return this.buildUnit(SPECS.CRUSADER, 1, 0);
         else {
             return this.unit.do_someth();
         }

@@ -1,6 +1,5 @@
 import Creature from "./creature.js";
 import Point from './point.js';
-import findClosestResource from './mapScan.js';
 
 export default class Castle extends Creature {
 
@@ -16,7 +15,7 @@ export default class Castle extends Creature {
         
     }
     findNewClosest(){
-        this.closestResource = findClosestResource();
+        this.closestResource = this.findClosestResource();
         this.ignoreList.push(this.closestResource);
     }
     findClosestResource() {
