@@ -36,7 +36,8 @@ class MyRobot extends BCAbstractRobot {
         step++;
         if (!step)
             this.my_constructor();
-        if (this.me.unit == SPECS.CASTLE && !step)
+        if (this.me.unit == SPECS.CASTLE && step < 5)
+            // return this.buildUnit(SPECS.CRUSADER, 1, 0)
             return this.unit.do_someth();
         else {
             return this.unit.do_someth();

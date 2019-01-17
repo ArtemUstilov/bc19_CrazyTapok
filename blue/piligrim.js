@@ -5,7 +5,13 @@ export default class Piligrim extends WalkingRobot {
     constructor(_this) {
         super(_this);
         this.actionType = 0;
+        this.miningCors = undefined;
+        this.recieveMessage();
         // 0-goMine, 1-readyToMine, 2-goHome, 3-readyToGive
+    }
+    recieveMessage(){
+        let castle = this.robot.getRobot(this.robot.getVisibleRobotMap()[this.home.y][this.home.x])
+        this.miningCors = parseCors(castle.signal)
     }
     findClosestResource(myTowerX, myTowerY, resMap, ignore) {
         let resources =[];
