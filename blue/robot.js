@@ -2,7 +2,7 @@ import {BCAbstractRobot, SPECS} from 'battlecode';
 import Point from './point.js'
 import path from './distance.js'
 import {Combat as Crusader, Combat as Preacher, Combat as Prophet} from './combat.js'
-import {Piligrim} from './piligrim.js'
+import Piligrim from './piligrim.js'
 let step = -1;
 
 class MyRobot extends BCAbstractRobot {
@@ -19,12 +19,7 @@ class MyRobot extends BCAbstractRobot {
         this.width = this.map.length;
         this.makeHomeCordinates();
         this.speed = this.me.unit == SPECS.CRUSADER ? 9 : 4;
-        if(this.me.unit != SPECS.CASTLE && this.map[20][20]) {
-            this.log('send' + this.position)
-            this.updatePath(path(this.map, this.position, new Point(20, 20)))
-        }else if(!this.map[20][20])
-            this.log('stay')
-        switch (this.me.unit) {
+          switch (this.me.unit) {
             case SPECS.PILGRIM:
                 this.unit = new Piligrim(this);
                 break;
@@ -79,21 +74,16 @@ class MyRobot extends BCAbstractRobot {
            this.my_constructor();
         this.updatePosition();
         this.unit.do_someth();
-        // if(this.me.unit !== SPECS.CASTLE) {
-        //     if(this.isGoing) {
-        //         return this.step();
-        //     }
-        // }
         if(this.me.unit == SPECS.CASTLE && !step)
             return this.buildUnit(SPECS.CRUSADER, 1, 0);
     }
-    findFreePlace(){
+    findFreePlace() {
         let freeP = [];
         let robotsMap = this.getVisibleRobotMap();
-        for(let i = Math.max(0, this.me.x - 1); i <= Math.min(this.width,this.me.x + 1); i++) {
+        for (let i = Math.max(0, this.me.x - 1); i <= Math.min(this.width, this.me.x + 1); i++) {
             for (let j = Math.max(0, this.me.y - 1); j <= Math.min(this.width, this.me.y + 1); j++) {
-                if(!robotsMap[j][i] && this.map[j][i])
-                    freeP.push(new Point(i,j));
+                if (!robotsMap[j][i] && this.map[j][i])
+                    freeP.push(new Point(i, j));
             }
         }
         return freeP;
