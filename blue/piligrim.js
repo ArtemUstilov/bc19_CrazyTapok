@@ -5,6 +5,7 @@ import WalkingRobot from 'walkingRobot.js';
 export default class Piligrim extends WalkingRobot{
     constructor(_this) {
         super(_this);
+        this._this = _this;
         this.readyToMine = false;
     }
     removePath() {
@@ -14,14 +15,15 @@ export default class Piligrim extends WalkingRobot{
         this.readyToMine = true;
     }
     goMine(ignore) {
-        let point = new Point(...Object.values(findClosestResource(this.me.x, this.me.y, this.fuel_map, [])));
+        let point = new Point(...Object.values(findClosestResource(this.position.x, this.position.y, this.robot.fuel_map, [])));
         this.updatePath(point);
     }
     do_someth(ign) {
         this.updatePosition();
         if(!this.isGoing && !this.readyToMine)this.goMine(ign);
         if (this.readyToMine) {
-            return this.mine()
+            this.log(this.position.x)
+            return this.robot.mine()
         } else if (this.isGoing) {
             return this.step();
         }

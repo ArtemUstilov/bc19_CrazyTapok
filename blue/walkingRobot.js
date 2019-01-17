@@ -7,10 +7,10 @@ export default class WalkingRobot extends Creature{
         this.isGoing = false;
         this.destination = undefined;
         this.currentPath = [];
-        this.speed = this.me.unit == SPECS.CRUSADER ? 9 : 4;
+        this.speed = this.robot.me.unit == SPECS.CRUSADER ? 9 : 4;
     }
     updatePath(dest) {
-        this.currentPath = waveAlgorithm(this.map, this.position, dest);
+        this.currentPath = waveAlgorithm(this.robot.map, this.position, dest);
         this.destination = this.currentPath[this.currentPath.length - 1];
         this.isGoing = true;
     }
@@ -26,7 +26,7 @@ export default class WalkingRobot extends Creature{
             possiblePoints.push(this.currentPath.shift());
         }
         for(let i = possiblePoints.length-1; i >= 0; i--){
-            if(!this.getVisibleRobotMap()[possiblePoints[i].y][possiblePoints[i].x]){
+            if(!this.robot.getVisibleRobotMap()[possiblePoints[i].y][possiblePoints[i].x]){
                 nextPoint = possiblePoints[i];
                 for(let j = possiblePoints.length-1; j >= i+1 ; j--){
                     this.currentPath.unshift(possiblePoints[j]);
@@ -38,6 +38,6 @@ export default class WalkingRobot extends Creature{
             this.removePath();
         if(!nextPoint)
             return;
-        return this.move(...this.position.deltaArray(nextPoint))
+        return this.robot.move(...this.position.deltaArray(nextPoint))
     }
 }
