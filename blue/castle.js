@@ -1,39 +1,40 @@
 import Creature from "./creature.js";
 import Point from './point.js';
 import {SPECS} from 'battlecode'
+
 export default class Castle extends Creature {
 
     constructor(_this) {
         super(_this);
-        this.ignoreList = [];
-        this.resMap = [];
+        this.busyMines = new Set();
         this.closestResource = undefined;
-        this.makeResMap();
         this.mapIsFull = false;
-        this.startSignal = false;
         this.currentFreePlace = undefined;
-        this.kek = false;
     }
-
     do_someth(ign) {
-        if(this.robot.fuel>100&&this.robot.karbonite>40) {
-           // this.log('WE THINK THAT NOW MAP ' + this.mapIsFull)
-            this.findNewClosest()
-           // this.log('CLOSEST RESOURCE TO US IS ' + this.closestResource)
+        this.robot.getVisibleRobots()
+            .filter(x => x.team == this.robot.me.team)
+            .filter(x => SPECS.PILGRIM == x.unit)
+            .forEach(r => {
+                if(r.castle_talk !== undefined){
+                    this.busyMines.add(r.castle_talk)
+                    this.log('added coordinata ' + this.miningCode[r.castle_talk].x + " " + this.miningCode[r.castle_talk].y)
+                }})
+        if (this.canAfford(SPECS.PILGRIM)) {
+            this.findNewClosest();
             if (!this.mapIsFull) {
-                    this.sendResCoor();
-                if(this.kek) {
-                    //let robot = this.robot.getRobot(this.robot.getVisibleRobotMap()[this.robot.me.y + this.currentFreePlace[0]][this.robot.me.x + this.robot.me.x[1]]);
-                    this.log("IMPORTANT: ");
-                    this.kek=true;
-                }
+                this.sendResCoor();
                 this.currentFreePlace = this.position.deltaArray(this.findFreePlace()[0]);
-
-                return this.robot.buildUnit(SPECS.PILGRIM, ... this.currentFreePlace);
+                return this.robot.buildUnit(SPECS.PILGRIM, ...this.currentFreePlace);
             }
         }
     }
 
+    parseToObj(code) {
+        let x = Math.floor(code / 100);
+        let y = code % 100;
+        return {x, y};
+    }
 
     canAfford(unit, amount = 1) {
         let data = {
@@ -54,65 +55,35 @@ export default class Castle extends Creature {
     sendResCoor() {
         let x = this.closestResource.x;
         let y = this.closestResource.y;
-        if(y<10)y = "0" + y;
+        if (y < 10) y = "0" + y;
         this.robot.signal(parseInt(x + "" + y), 2);
     }
+
     findNewClosest() {
         if (!this.mapIsFull) {
             this.closestResource = this.findClosestResource();
-            if (typeof this.closestResource == "object")
-                this.ignoreList.push(this.closestResource);
+            if (this.closestResource){
+                this.log(this.closestResource + " ITS CLOSEST RESOURCE")
+                this.miningCode.forEach((c,i)=>{
+                    if(this.closestResource.x == c.x && this.closestResource.y == c.y)
+                        this.busyMines.add(i);
+                })
+            }
         }
-
     }
     findClosestResource() {
         let resources = [];
         let lengths = [];
-        if (this.ignoreList.length) {
-            this.ignoreList.forEach((el) => {
-                this.resMap[el.y][el.x] = false
-            });
-        }
-        for (let i = 0; i < this.width; i++) {
-            for (let j = 0; j < this.width; j++) {
-                if (this.resMap[i][j]) {
-                    resources.push(new Point(j, i));
-                    lengths.push(Math.sqrt(((i - this.position.y) * (i - this.position.y))
-                        + ((j - this.position.x) * (j - this.position.x))));
-                }
+        this.miningCode.forEach((mineCell, index)=>{
+            if(!this.busyMines.has(index)){
+                resources.push(mineCell);
+                lengths.push(this.position.distanceSq(new Point(mineCell.x, mineCell.y)))
             }
-        }
-        if (resources[lengths.indexOf(Math.min(...lengths))] == undefined) {
+        });
+        if(!resources.length){
             this.mapIsFull = true;
-            return "kek";
+            return;
         }
         return resources[lengths.indexOf(Math.min(...lengths))];
-    }
-
-    makeResMap() {
-        this.resMap = new Array(this.width)
-            .fill([])
-            .map(() => new Array(this.width))
-            .map(c => c.fill(false));
-        let fx = 0, fy = 0, endx = this.width, endy = this.width;
-         if(!this.X_Mirror) {
-             if (this.position.x < this.width / 2)
-                 endx = this.width/2;
-             else
-                 fx = this.width/2;
-         }else {
-            if (this.position.y < this.width / 2)
-                 endy = this.width / 2;
-             else
-                 fy = this.width / 2;
-         }
-        for (let i = fy; i < endy; i++) {
-            for (let j = fx; j < endx; j++) {
-                if (this.robot.fuel_map[i][j] || this.robot.karbonite_map[i][j]) {
-                    this.resMap[i][j] = true;
-                   // this.log('POINT ON OUR HALF AND HAS RESOURCES ' + j  + " "+ i)
-                }
-            }
-        }
     }
 }

@@ -12,6 +12,10 @@ export default class Creature {
         this.updatePosition();
         this.makeHomeCordinates();
         this.X_Mirror = this.scanMap();
+        this.miningCode = [];
+        this.resMap = undefined;
+        this.makeResMap()
+        this.indexingMining();
     }
     updatePosition(){
         this.position = new Point(this.robot.me.x, this.robot.me.y);
@@ -71,5 +75,38 @@ export default class Creature {
             }
         }
         return false;
+    }
+    makeResMap() {
+        this.resMap = new Array(this.width)
+            .fill([])
+            .map(() => new Array(this.width))
+            .map(c => c.fill(false));
+        let fx = 0, fy = 0, endx = this.width, endy = this.width;
+        if (!this.X_Mirror) {
+            if (this.position.x < this.width / 2)
+                endx = this.width / 2;
+            else
+                fx = Math.floor(this.width / 2);
+        } else {
+            if (this.position.y < this.width / 2)
+                endy = this.width / 2;
+            else
+                fy = Math.floor(this.width / 2);
+        }
+        for (let i = fy; i < endy; i++) {
+            for (let j = fx; j < endx; j++) {
+                if(!this.robot.fuel_map[i])
+                    this.log(i)
+                if (this.robot.fuel_map[i][j] || this.robot.karbonite_map[i][j]) {
+                    this.resMap[i][j] = true;
+                }
+            }
+        }
+    }
+    indexingMining(){
+        this.robot.map.forEach((row,y)=>row.forEach((_,x)=>{
+            if(this.resMap[y][x])
+                this.miningCode.push({x,y})
+        }))
     }
 }

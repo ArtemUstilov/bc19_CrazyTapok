@@ -6,16 +6,22 @@ export default class Piligrim extends WalkingRobot {
         super(_this);
         this.actionType = 0;
         this.miningCors = undefined;
-        this.recieveMessage()
         this.KARBCAPACITY = 20;
         this.FUELCAPACITY = 100;
+        this.recieveMessage()
         // 0-goMine, 1-readyToMine, 2-goHome, 3-readyToGive
     }
     recieveMessage(){
         let castle = this.robot.getRobot(this.robot.getVisibleRobotMap()[this.home.y][this.home.x]);
-        this.robot.castleTalk(228);
         this.miningCors = this.parseCors(castle.signal);
-
+        let index = -1;
+        this.miningCode.forEach((c,i)=>{
+            if(c.x == this.miningCors.x && c.y == this.miningCors.y)
+                index = i;
+        })
+        if(index < 0)
+            this.log('CANT FIN THIS CORS ON MAP ' + this.miningCors+ " " + this.miningCode.toString())
+        this.robot.castleTalk(index);
     }
     parseCors(code){
         let y = code%100;
@@ -34,15 +40,19 @@ export default class Piligrim extends WalkingRobot {
                this.robot.me.karbonite >= this.KARBCAPACITY-endMineK;
     }
     goMine(ignore) {
+        if(this.position.equal(this.miningCors))
+            return;
         let point = this.miningCors;
-        this.log("Mining:" +this.miningCors);
         this.updatePath(point, this.robot.getVisibleRobotMap());
         return this.step();
     }
 
     goHome() {
-        if (this.position.distanceSq(this.home) > 2)
-            this.updatePath(this.findFreePlace(this.home, 1)[0], this.robot.getVisibleRobotMap());
+        if (this.position.distanceSq(this.home) > 2) {
+            let home = this.findFreePlace(this.home, 1);
+            if(!home)return;
+            this.updatePath(home[0], this.robot.getVisibleRobotMap());
+        }
         return this.step();
     }
     do_someth(ign) {
