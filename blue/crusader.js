@@ -13,21 +13,9 @@ export default class Crusader extends Combat {
         this.attackRange = 16;
         this.enemiesNearBy = undefined
     }
-    scanMap(){
-        // true - по горизонтали, false - по вертикали
-        for(let i = 0; i<this.width;i++) {
-            for(let j = 0; j<this.width;j++) {
-                if(j == this.width/2)
-                    break;
-                if(this.robot.fuel_map[i][j] && !this.robot.fuel_map[i][this.width-1-j])
-                    return true;
-            }
-        }
-        return false;
-    }
     enemyCastleLocation() {
         let point;
-        if(this.scanMap())
+        if(this.X_Mirror)
             point =  new Point(this.home.x, this.width-1-this.home.y);
         else
             point = new Point(this.width-1-this.home.x, this.home.y);

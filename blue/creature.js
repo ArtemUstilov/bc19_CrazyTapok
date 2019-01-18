@@ -11,6 +11,7 @@ export default class Creature {
         this.home;
         this.updatePosition();
         this.makeHomeCordinates();
+        this.X_Mirror = this.scanMap();
     }
     updatePosition(){
         this.position = new Point(this.robot.me.x, this.robot.me.y);
@@ -58,5 +59,17 @@ export default class Creature {
         if (freeP.length < 1)
             this.log("WOOOOOOOOOOOOW CANT FIND FREE SPACE, GEY")
         return freeP;
+    }
+    scanMap(){
+        // true - по горизонтали, false - по вертикали
+        for(let i = 0; i<this.width;i++) {
+            for(let j = 0; j<this.width;j++) {
+                if(j == this.width/2)
+                    break;
+                if(this.robot.fuel_map[i][j] && !this.robot.fuel_map[i][this.width-1-j])
+                    return true;
+            }
+        }
+        return false;
     }
 }

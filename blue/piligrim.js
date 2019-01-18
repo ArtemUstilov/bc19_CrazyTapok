@@ -6,7 +6,9 @@ export default class Piligrim extends WalkingRobot {
         super(_this);
         this.actionType = 0;
         this.miningCors = undefined;
-        this.recieveMessage();
+        this.recieveMessage()
+        this.KARBCAPACITY = 20;
+        this.FUELCAPACITY = 100;
         // 0-goMine, 1-readyToMine, 2-goHome, 3-readyToGive
     }
     recieveMessage(){
@@ -14,43 +16,25 @@ export default class Piligrim extends WalkingRobot {
         this.miningCors = this.parseCors(castle.signal);
 
     }
-    parseCors(toParse){
-        let temp = toParse.toString().split("0");
-        return new Point(temp[0],temp[1]);
-    }
-    findClosestResource(myTowerX, myTowerY, resMap, ignore) {
-        let resources =[];
-        let lengths =[];
-        let map = resMap
-        if(ignore.length) {
-            ignore.forEach((el)=>{map[el.x][el.y]=false});
-        }
-        for(let i = 0; i<map.length;i++) {
-            for(let j = 0; j<map.length;j++) {
-                if(map[i][j]) {
-                    resources.push({x:j,y:i});
-                    lengths.push(Math.sqrt(((i-myTowerY)*(i-myTowerY))+((j-myTowerX)*(j-myTowerX))));
-                }
-            }
-        }
-        return resources[lengths.indexOf(Math.min(...lengths))];
+    parseCors(code){
+        let y = code%100;
+        let x = Math.floor(code/100);
+        this.log('CORS THAT RECIEVE MINER ' + x + ' ' + y)
+        return new Point(x, y);
     }
     removePath() {
         super.removePath();
         this.actionType = 1;
-        if (this.isFull(100,100))
+        if (this.isFull())
             this.actionType = 3;
     }
-
-    isFull(fuelNum, karboniteNum) {
-        return this.robot.me.fuel == fuelNum || this.robot.me.karbonite == karboniteNum;
+    isFull(endMineF = 0, endMineK = 0) {
+        return this.robot.me.fuel >= this.FUELCAPACITY-endMineF ||
+               this.robot.me.karbonite >= this.KARBCAPACITY-endMineK;
     }
-
     goMine(ignore) {
-
-        let point = new Point(...Object.values(this.findClosestResource(this.position.x, this.position.y, this.robot.fuel_map, [])));
+        let point = this.miningCors;
         this.log("Mining:" +this.miningCors);
-        //this.log("point:"+point);
         this.updatePath(point, this.robot.getVisibleRobotMap());
         return this.step();
     }
@@ -66,7 +50,7 @@ export default class Piligrim extends WalkingRobot {
             case 0:
                 return this.goMine(ign);
             case 1:
-                if (this.isFull(90,90))
+                if (this.isFull(10,2))
                     this.actionType = 2;
                 return this.robot.mine();
             case 2:
