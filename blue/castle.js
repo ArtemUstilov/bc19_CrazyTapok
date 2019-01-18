@@ -12,18 +12,23 @@ export default class Castle extends Creature {
         this.currentFreePlace = undefined;
     }
     do_someth(ign) {
+        // this.log(this.robot.getVisibleRobots()
+        //     .filter(x => SPECS.PILGRIM == x.unit).reduce(x=>x+1, 0) + " I CAN SEE THIS AMOUNT OF PilGRIMS")
+        // this.robot.getVisibleRobots().filter(x=>SPECS.PILGRIM == x.unit).forEach(r=>{
+        //     this.log(r.x + " " + r.y)
+        // })
         this.robot.getVisibleRobots()
-            .filter(x => x.team == this.robot.me.team)
-            .filter(x => SPECS.PILGRIM == x.unit)
+            .filter(x => SPECS.CASTLE == x.unit)
             .forEach(r => {
                 if(r.castle_talk !== undefined){
-                    this.busyMines.add(r.castle_talk)
-                    this.log('added coordinata ' + this.miningCode[r.castle_talk].x + " " + this.miningCode[r.castle_talk].y)
+                    // this.log('ME, CASTLE ADDED IT TO BUSY MINES')
+                    this.busyMines.add(255-r.castle_talk)
                 }})
         if (this.canAfford(SPECS.PILGRIM)) {
             this.findNewClosest();
             if (!this.mapIsFull) {
                 this.sendResCoor();
+                this.log('I HAS SENT MESSAGE ALREADY')
                 this.currentFreePlace = this.position.deltaArray(this.findFreePlace()[0]);
                 return this.robot.buildUnit(SPECS.PILGRIM, ...this.currentFreePlace);
             }
@@ -65,8 +70,10 @@ export default class Castle extends Creature {
             if (this.closestResource){
                 this.log(this.closestResource + " ITS CLOSEST RESOURCE")
                 this.miningCode.forEach((c,i)=>{
-                    if(this.closestResource.x == c.x && this.closestResource.y == c.y)
+                    if(this.closestResource.x == c.x && this.closestResource.y == c.y){
                         this.busyMines.add(i);
+                        this.robot.castleTalk(255-i);
+                    }
                 })
             }
         }
