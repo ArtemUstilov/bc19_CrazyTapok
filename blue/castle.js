@@ -14,16 +14,19 @@ export default class Castle extends Creature {
     }
 
     do_someth(ign) {
-        this.log('WE THINK THAT NOW MAP ' + this.mapIsFull)
-        this.findNewClosest()
-        this.log('CLOSEST RESOURCE TO US IS ' + this.closestResource)
-        if (!this.mapIsFull) {
+        if(this.robot.fuel>100&&this.robot.karbonite>40) {
+            this.log('WE THINK THAT NOW MAP ' + this.mapIsFull)
+            this.findNewClosest()
+            this.log('CLOSEST RESOURCE TO US IS ' + this.closestResource)
+            if (!this.mapIsFull) {
                 this.sendResCoor();
                 this.log("kek:" + this.robot.me.signal);
                 let freePlace = this.position.deltaArray(this.findFreePlace()[0]);
                 return this.robot.buildUnit(SPECS.PILGRIM, ...freePlace);
+            }
         }
     }
+
     canAfford(unit, amount = 1) {
         let data = {
             [SPECS.CRUSADER]: {f: 50, c: 20},
