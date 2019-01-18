@@ -11,9 +11,8 @@ export default class Piligrim extends WalkingRobot {
     }
     recieveMessage(){
         let castle = this.robot.getRobot(this.robot.getVisibleRobotMap()[this.home.y][this.home.x]);
-        this.log(castle.signal);
         this.miningCors = this.parseCors(castle.signal);
-        this.log(this.miningCors);
+
     }
     parseCors(toParse){
         let temp = toParse.toString().split("0");
@@ -50,7 +49,8 @@ export default class Piligrim extends WalkingRobot {
     goMine(ignore) {
 
         let point = new Point(...Object.values(this.findClosestResource(this.position.x, this.position.y, this.robot.fuel_map, [])));
-        this.log("point"+point);
+        this.log("Mining:" +this.miningCors);
+        //this.log("point:"+point);
         this.updatePath(point, this.robot.getVisibleRobotMap());
         return this.step();
     }
@@ -62,7 +62,6 @@ export default class Piligrim extends WalkingRobot {
     }
     do_someth(ign) {
         this.updatePosition();
-        this.log(this.actionType);
         switch (this.actionType) {
             case 0:
                 return this.goMine(ign);

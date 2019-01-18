@@ -11,21 +11,21 @@ export default class Castle extends Creature {
         this.makeResMap();
         this.mapIsFull = false;
         this.kek = true;
+        this.startSignal =false;
     }
 
     do_someth(ign) {
+        this.findNewClosest()
         if (!this.mapIsFull) {
-            this.findNewClosest();
-            this.sendResCoor();
-            this.log("test" + this.closestResource.x);
-
             if (this.kek) {
+                this.sendResCoor();
+                this.log("kek:" + this.robot.me.signal);
                 this.kek = false;
                 return this.robot.buildUnit(2, 1, 0);
+
+
             }
-
         }
-
     }
     canAfford(unit, amount = 1){
         let data = {
@@ -56,15 +56,17 @@ export default class Castle extends Creature {
 }
 findNewClosest()
 {
-    if (!this.mapIsFull) {
-        this.closestResource = this.findClosestResource();
-        if(!this.closestResource==undefined)
-        this.ignoreList.push(this.closestResource);
-    }
+        if(!this.mapIsFull) {
+            this.closestResource = this.findClosestResource();
+            if(typeof this.closestResource=="object")
+            this.ignoreList.push(this.closestResource);
+        }
+
 }
 
 findClosestResource()
 {
+
     let resources = [];
     let lengths = [];
 
@@ -77,15 +79,16 @@ findClosestResource()
         for (let j = 0; j < this.width; j++) {
             if (this.resMap[i][j]) {
                 resources.push(new Point(j, i));
-                lengths.push(Math.sqrt(((i - this.position.x) * (i - this.position.x))
-                    + ((j - this.position.y) * (j - this.position.y))));
+                lengths.push(Math.sqrt(((i - this.position.y) * (i - this.position.y))
+                    + ((j - this.position.x) * (j - this.position.x))));
             }
         }
     }
-    let res = resources[lengths.indexOf(Math.min(...lengths))];
-    if (res) return res;
-    this.mapIsFull = true;
-    return "end";
+    if(resources[lengths.indexOf(Math.min(...lengths))]==undefined){
+        this.mapIsFull=true;
+        return "kek";
+    }
+    return resources[lengths.indexOf(Math.min(...lengths))];
 }
 
 makeResMap()
