@@ -11,21 +11,29 @@ export default class Castle extends Creature {
         this.makeResMap();
         this.mapIsFull = false;
         this.startSignal = false;
+        this.currentFreePlace = undefined;
+        this.kek = false;
     }
 
     do_someth(ign) {
         if(this.robot.fuel>100&&this.robot.karbonite>40) {
-            this.log('WE THINK THAT NOW MAP ' + this.mapIsFull)
+           // this.log('WE THINK THAT NOW MAP ' + this.mapIsFull)
             this.findNewClosest()
-            this.log('CLOSEST RESOURCE TO US IS ' + this.closestResource)
+           // this.log('CLOSEST RESOURCE TO US IS ' + this.closestResource)
             if (!this.mapIsFull) {
-                this.sendResCoor();
-                this.log("kek:" + this.robot.me.signal);
-                let freePlace = this.position.deltaArray(this.findFreePlace()[0]);
-                return this.robot.buildUnit(SPECS.PILGRIM, ...freePlace);
+                    this.sendResCoor();
+                if(this.kek) {
+                    //let robot = this.robot.getRobot(this.robot.getVisibleRobotMap()[this.robot.me.y + this.currentFreePlace[0]][this.robot.me.x + this.robot.me.x[1]]);
+                    this.log("IMPORTANT: ");
+                    this.kek=true;
+                }
+                this.currentFreePlace = this.position.deltaArray(this.findFreePlace()[0]);
+
+                return this.robot.buildUnit(SPECS.PILGRIM, ... this.currentFreePlace);
             }
         }
     }
+
 
     canAfford(unit, amount = 1) {
         let data = {
@@ -102,7 +110,7 @@ export default class Castle extends Creature {
             for (let j = fx; j < endx; j++) {
                 if (this.robot.fuel_map[i][j] || this.robot.karbonite_map[i][j]) {
                     this.resMap[i][j] = true;
-                    this.log('POINT ON OUR HALF AND HAS RESOURCES ' + j  + " "+ i)
+                   // this.log('POINT ON OUR HALF AND HAS RESOURCES ' + j  + " "+ i)
                 }
             }
         }

@@ -13,6 +13,7 @@ export default class Piligrim extends WalkingRobot {
     }
     recieveMessage(){
         let castle = this.robot.getRobot(this.robot.getVisibleRobotMap()[this.home.y][this.home.x]);
+        this.robot.castleTalk(228);
         this.miningCors = this.parseCors(castle.signal);
 
     }
