@@ -84,17 +84,17 @@ export default class Castle extends Creature {
             .map(() => new Array(this.width))
             .map(c => c.fill(false));
         let fx = 0, fy = 0, endx = this.width, endy = this.width;
-        // if(this.X_Mirror) {
-        //     if (this.position.x < this.width / 2)
-        //         endx = this.width/2;
-        //     else
-        //         fx = this.width/2;
-        // }else {
-        //     if (this.position.y < this.width / 2)
-        //         endy = this.width / 2;
-        //     else
-        //         fy = this.width / 2;щ
-        // }
+         if(!this.X_Mirror) {
+             if (this.position.x < this.width / 2)
+                 endx = this.width/2;
+             else
+                 fx = this.width/2;
+         }else {
+            if (this.position.y < this.width / 2)
+                 endy = this.width / 2;
+             else
+                 fy = this.width / 2;
+         }
         for (let i = fy; i < endy; i++) {
             for (let j = fx; j < endx; j++) {
                 if (this.robot.fuel_map[i][j] || this.robot.karbonite_map[i][j]) {
