@@ -4,7 +4,15 @@
     <list default="true" id="a11d43a4-5139-49e4-b5f9-edfec01c2433" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue/castle.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/castle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue/combat.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/combat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue/creature.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/creature.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue/crusader.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/crusader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue/distance.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/distance.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue/mapScan.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/blue/piligrim.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/piligrim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue/point.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/point.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue/robot.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/robot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue/walkingRobot.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/walkingRobot.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,8 +32,8 @@
       <file leaf-file-name="robot.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/robot.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+            <state relative-caret-position="329">
+              <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -33,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="castle.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="castle.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blue/castle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+            <state relative-caret-position="323">
+              <caret line="76" column="19" lean-forward="true" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -48,8 +56,11 @@
       <file leaf-file-name="creature.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/creature.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1564">
-              <caret line="93" column="47" selection-start-line="93" selection-start-column="47" selection-end-line="93" selection-end-column="47" />
+            <state relative-caret-position="465">
+              <caret line="84" column="1" lean-forward="true" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,8 +68,8 @@
       <file leaf-file-name="walkingRobot.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/walkingRobot.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+            <state relative-caret-position="295">
+              <caret line="25" column="60" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="25" selection-end-column="60" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -69,8 +80,8 @@
       <file leaf-file-name="combat.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/combat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="43" selection-start-column="43" selection-end-column="43" />
+            <state relative-caret-position="17">
+              <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -78,8 +89,8 @@
       <file leaf-file-name="crusader.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/crusader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+            <state relative-caret-position="156">
+              <caret line="14" column="28" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="28" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -90,8 +101,8 @@
       <file leaf-file-name="distance.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/distance.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+            <state>
+              <caret lean-forward="true" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -102,29 +113,17 @@
       <file leaf-file-name="point.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/point.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+            <state relative-caret-position="391">
+              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="piligrim.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="piligrim.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/piligrim.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="66" column="34" lean-forward="true" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mapScan.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blue/mapScan.js">
-          <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="23" selection-start-column="23" selection-end-column="23" />
+              <caret lean-forward="true" />
             </state>
           </provider>
         </entry>
@@ -143,8 +142,12 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>this.miningC</find>
-      <find>this.log</find>
       <find>robo</find>
+      <find>this.log</find>
+      <find>this.miningCode</find>
+      <find>miningCode</find>
+      <find>find</find>
+      <find>findFree</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -159,18 +162,18 @@
         <option value="$PROJECT_DIR$/potentialField/style.css" />
         <option value="$PROJECT_DIR$/potentialField/index.js" />
         <option value="$PROJECT_DIR$/blue/distTest.js" />
-        <option value="$PROJECT_DIR$/blue/point.js" />
         <option value="$PROJECT_DIR$/blue/home.js" />
         <option value="$PROJECT_DIR$/blue/Combat.js" />
-        <option value="$PROJECT_DIR$/blue/combat.js" />
         <option value="$PROJECT_DIR$/blue/mapScan.js" />
-        <option value="$PROJECT_DIR$/blue/distance.js" />
+        <option value="$PROJECT_DIR$/blue/point.js" />
         <option value="$PROJECT_DIR$/blue/walkingRobot.js" />
+        <option value="$PROJECT_DIR$/blue/piligrim.js" />
+        <option value="$PROJECT_DIR$/blue/distance.js" />
         <option value="$PROJECT_DIR$/blue/robot.js" />
+        <option value="$PROJECT_DIR$/blue/combat.js" />
         <option value="$PROJECT_DIR$/blue/crusader.js" />
         <option value="$PROJECT_DIR$/blue/creature.js" />
         <option value="$PROJECT_DIR$/blue/castle.js" />
-        <option value="$PROJECT_DIR$/blue/piligrim.js" />
       </list>
     </option>
   </component>
@@ -273,12 +276,12 @@
       <option name="presentableId" value="Default" />
       <updated>1547461319287</updated>
       <workItem from="1547461320599" duration="104674000" />
-      <workItem from="1547835887602" duration="3166000" />
+      <workItem from="1547835887602" duration="14070000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107840000" />
+    <option name="totallyTimeSpent" value="118744000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -293,7 +296,7 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49818182" visible="true" weight="0.25285172" />
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49636364" visible="true" weight="0.25285172" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.3293011" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
@@ -302,7 +305,7 @@
       <window_info id="npm" order="0" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.26075268" />
-      <window_info active="true" id="Favorites" order="1" sideWeight="0.5018182" side_tool="true" visible="true" weight="0.25285172" />
+      <window_info id="Favorites" order="1" sideWeight="0.50363636" side_tool="true" visible="true" weight="0.25285172" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39919356" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -339,6 +342,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1564">
           <caret line="93" column="47" selection-start-line="93" selection-start-column="47" selection-end-line="93" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -390,9 +396,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -427,6 +430,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -495,13 +501,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blue/point.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blue/mapScan.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -509,76 +508,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blue/combat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="43" selection-start-column="43" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blue/distance.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+        <state>
+          <caret lean-forward="true" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blue/crusader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blue/walkingRobot.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blue/robot.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+        <state relative-caret-position="329">
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blue/creature.js">
+    <entry file="file://$PROJECT_DIR$/blue/combat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="93" column="47" selection-start-line="93" selection-start-column="47" selection-end-line="93" selection-end-column="47" />
+        <state relative-caret-position="17">
+          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blue/castle.js">
+    <entry file="file://$PROJECT_DIR$/blue/point.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="391">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blue/piligrim.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="66" column="34" lean-forward="true" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blue/walkingRobot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="25" column="60" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="25" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blue/crusader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="28" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blue/creature.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="84" column="1" lean-forward="true" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blue/castle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="76" column="19" lean-forward="true" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,46 +1,32 @@
 import Creature from "./creature.js";
-import Point from './point.js';
 import {SPECS} from 'battlecode'
 
 export default class Castle extends Creature {
-
     constructor(_this) {
         super(_this);
         this.busyMines = new Set();
         this.closestResource = undefined;
         this.mapIsFull = false;
         this.currentFreePlace = undefined;
+        this.checkDistantMines();
+        this.actionType = 0;
+        // 0 - create pilgrims, 1 - create crusaders
+        this.step = -1;
+        this.piligrims = 0;
+        this.crusaders = 0;
     }
-    do_someth(ign) {
-        // this.log(this.robot.getVisibleRobots()
-        //     .filter(x => SPECS.PILGRIM == x.unit).reduce(x=>x+1, 0) + " I CAN SEE THIS AMOUNT OF PilGRIMS")
-        // this.robot.getVisibleRobots().filter(x=>SPECS.PILGRIM == x.unit).forEach(r=>{
-        //     this.log(r.x + " " + r.y)
-        // })
+    checkDistantMines(){
+        this.miningCode.forEach((m,i)=>{
+            if(this.position.fastestPathLength(m, this.robot.map, this.robot.getVisibleRobotMap()) > 15)
+                this.busyMines.add(i);
+        })
+    }
+    recieveMsgs(){
         this.robot.getVisibleRobots()
             .filter(x => SPECS.CASTLE == x.unit)
-            .forEach(r => {
-                if(r.castle_talk !== undefined){
-                    // this.log('ME, CASTLE ADDED IT TO BUSY MINES')
-                    this.busyMines.add(255-r.castle_talk)
-                }})
-        if (this.canAfford(SPECS.PILGRIM)) {
-            this.findNewClosest();
-            if (!this.mapIsFull) {
-                this.sendResCoor();
-                this.log('I HAS SENT MESSAGE ALREADY')
-                this.currentFreePlace = this.position.deltaArray(this.findFreePlace()[0]);
-                return this.robot.buildUnit(SPECS.PILGRIM, ...this.currentFreePlace);
-            }
-        }
+            .filter(r=>r.castle_talk)
+            .forEach(r => this.busyMines.add(255 - r.castle_talk))
     }
-
-    parseToObj(code) {
-        let x = Math.floor(code / 100);
-        let y = code % 100;
-        return {x, y};
-    }
-
     canAfford(unit, amount = 1) {
         let data = {
             [SPECS.CRUSADER]: {f: 50, c: 20},
@@ -50,47 +36,52 @@ export default class Castle extends Creature {
         };
         return data[unit].f * amount <= this.robot.fuel && data[unit].c * amount <= this.robot.karbonite;
     }
-
     countCastles() {
         return this.robot.getVisibleRobots()
             .filter(r => r.unit == SPECS.CASTLE)
             .reduce(x => x + 1, 1);
     }
-
     sendResCoor() {
-        let x = this.closestResource.x;
-        let y = this.closestResource.y;
-        if (y < 10) y = "0" + y;
-        this.robot.signal(parseInt(x + "" + y), 2);
-    }
-
-    findNewClosest() {
-        if (!this.mapIsFull) {
-            this.closestResource = this.findClosestResource();
-            if (this.closestResource){
-                this.log(this.closestResource + " ITS CLOSEST RESOURCE")
-                this.miningCode.forEach((c,i)=>{
-                    if(this.closestResource.x == c.x && this.closestResource.y == c.y){
-                        this.busyMines.add(i);
-                        this.robot.castleTalk(255-i);
-                    }
-                })
-            }
-        }
+        let index = this.miningCode.findIndex(c=>this.closestResource.equal(c))
+        this.busyMines.add(index)
+        this.robot.castleTalk(255 - index);
+        this.robot.signal(index, 2);
     }
     findClosestResource() {
-        let resources = [];
-        let lengths = [];
-        this.miningCode.forEach((mineCell, index)=>{
-            if(!this.busyMines.has(index)){
+        let resources = [], lengths = [];
+        this.miningCode
+            .filter((_,i)=>!this.busyMines.has(i))
+            .forEach((mineCell, index) => {
                 resources.push(mineCell);
-                lengths.push(this.position.distanceSq(new Point(mineCell.x, mineCell.y)))
-            }
-        });
-        if(!resources.length){
+                lengths.push(this.position.distanceSq(mineCell))});
+        if (resources.length == 1)
             this.mapIsFull = true;
-            return;
+        this.closestResource = resources[lengths.indexOf(Math.min(...lengths))];
+    }
+    updateActions(){
+        if (this.canAfford(SPECS.PILGRIM) && !this.mapIsFull && this.step < 100)
+            this.actionType = 0;
+        else if(this.canAfford(SPECS.CRUSADER) && this.crusaders < 3)
+            this.actionType = 1;
+        else
+            this.actionType = -1;
+    }
+    do_someth(ign) {
+        this.step++;
+        this.recieveMsgs();
+        this.updateActions();
+        switch (this.actionType){
+            case 0:
+                this.findClosestResource();
+                this.sendResCoor();
+                this.currentFreePlace = this.position.deltaArray(this.findFreePlace()[0]);
+                this.piligrims++;
+                return this.robot.buildUnit(SPECS.PILGRIM, ...this.currentFreePlace);
+            case 1:
+                this.currentFreePlace = this.position.deltaArray(this.findFreePlace()[0]);
+                this.crusaders++;
+                return this.robot.buildUnit(SPECS.CRUSADER, ...this.currentFreePlace);
         }
-        return resources[lengths.indexOf(Math.min(...lengths))];
+
     }
 }

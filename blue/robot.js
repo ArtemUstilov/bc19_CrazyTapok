@@ -27,8 +27,6 @@ class MyRobot extends BCAbstractRobot {
             case SPECS.CASTLE:
                 this.unit = new Castle(this);
                 break;
-            //default:
-                //this.unit = new Crusader(this);
         }
     }
 
@@ -36,10 +34,6 @@ class MyRobot extends BCAbstractRobot {
         step++;
         if (!step)
             this.my_constructor();
-        if (this.me.unit == SPECS.CASTLE && !step)
             return this.unit.do_someth();
-        else {
-            return this.unit.do_someth();
-        }
     }
 }

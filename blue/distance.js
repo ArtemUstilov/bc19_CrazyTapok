@@ -3,11 +3,9 @@
 //https://habr.com/ru/post/264189/
 export default waveAlgorithm;
 function waveAlgorithm(map, pos, dest, robotsNearby){
-    let applyRobots = ()=>true;
+    let applyRobots = (y,x)=>true;
     if(robotsNearby){
-        applyRobots = (y,x)=>{
-            return (robotsNearby[y][x] <= 0);
-        }
+        applyRobots = (y,x)=>robotsNearby[y][x] <= 0;
     }
     //init map where in every cell its path from pos
     //if its unpassable cell value is -1
@@ -34,10 +32,7 @@ function waveAlgorithm(map, pos, dest, robotsNearby){
     //path it is array of points
     return path;
 }
-function scaleMap(map, pos, dest){
-    let size = Math.min(...pos.deltaArray(dest));
-    //map = map.map(row=>row.splice(0, pos.y))
-}
+
 function incrementNeighbors(mapSheme, map, wave, pos){
     //icnrement all nearby to wave cells
     let nextWave = [];

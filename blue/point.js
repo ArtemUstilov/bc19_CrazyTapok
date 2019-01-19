@@ -1,4 +1,6 @@
 //class to point
+import waveAlgorithm from "./distance.js";
+
 export default class Point {
     constructor(x,y){
         this.x = x;
@@ -23,6 +25,9 @@ export default class Point {
     distanceSq(p){
         //distance from a to b
         return Math.pow(p.x-this.x, 2) + Math.pow(p.y - this.y, 2);
+    }
+    fastestPathLength(p, map, robots){
+        return waveAlgorithm(map, this, p, robots).length;
     }
     deltaArray(p){
         //shift from a to b
