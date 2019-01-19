@@ -10,7 +10,8 @@ export default class Castle extends Creature {
         this.currentFreePlace = undefined;
         this.checkDistantMines();
         this.actionType = 0;
-        // 0 - create pilgrims, 1 - create crusaders
+        this.attackRange = 10;
+        // 0 - create pilgrims, 1 - create crusaders, 2 - attack enemies
         this.step = -1;
         this.piligrims = 0;
         this.crusaders = 0;
@@ -59,7 +60,9 @@ export default class Castle extends Creature {
         this.closestResource = resources[lengths.indexOf(Math.min(...lengths))];
     }
     updateActions(){
-        if (this.canAfford(SPECS.PILGRIM) && !this.mapIsFull && this.step < 100)
+        if(this.enemiesNearBy.length)
+            this.actionType = 2;
+        else if (this.canAfford(SPECS.PILGRIM) && !this.mapIsFull && this.step < 100)
             this.actionType = 0;
         else if(this.canAfford(SPECS.CRUSADER) && this.crusaders < 3)
             this.actionType = 1;
@@ -69,18 +72,27 @@ export default class Castle extends Creature {
     do_someth(ign) {
         this.step++;
         this.recieveMsgs();
+        this.checkEnemies();
         this.updateActions();
         switch (this.actionType){
             case 0:
                 this.findClosestResource();
                 this.sendResCoor();
                 this.currentFreePlace = this.position.deltaArray(this.findFreePlace()[0]);
-                this.piligrims++;
-                return this.robot.buildUnit(SPECS.PILGRIM, ...this.currentFreePlace);
+                if(this.currentFreePlace) {
+                    this.piligrims++;
+                    return this.robot.buildUnit(SPECS.PILGRIM, ...this.currentFreePlace);
+                }
+                break;
             case 1:
                 this.currentFreePlace = this.position.deltaArray(this.findFreePlace()[0]);
-                this.crusaders++;
-                return this.robot.buildUnit(SPECS.CRUSADER, ...this.currentFreePlace);
+                if(this.currentFreePlace) {
+                    this.crusaders++;
+                    return this.robot.buildUnit(SPECS.CRUSADER, ...this.currentFreePlace);
+                }
+                break;
+            case 2:
+                return this.attack(this.weakestEnemy())
         }
 
     }

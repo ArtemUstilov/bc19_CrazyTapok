@@ -7,9 +7,6 @@ export class Combat extends WalkingRobot {
         this.attackRange = 0;
         this.enemyCastle = this.enemyCastleLocation();
     }
-    inRange(dist){
-        return dist <= this.attackRange
-    }
     enemyCastleLocation() {
         let point;
         if(this.X_Mirror)

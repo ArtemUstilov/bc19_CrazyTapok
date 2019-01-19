@@ -13,8 +13,28 @@ export default class Creature {
         this.X_Mirror = this.scanMap();
         this.miningCode = [];
         this.resMap = undefined;
+        this.enemiesNearBy = [];
+        this.attackRange;
         this.makeResMap()
         this.indexingMining();
+    }
+    inRange(dist){
+        return dist <= this.attackRange
+    }
+    checkEnemies(){
+        this.enemiesNearBy = this.robot.getVisibleRobots()
+            .filter(r=>r.team != this.robot.me.team)
+            .filter(r=>r.unit != SPECS.CASTLE)
+            .map(r=>new Point(r.x,r.y))
+            .filter(p=>this.inRange(p.distanceSq(this.position)));
+    }
+    weakestEnemy(){
+        return this.enemiesNearBy.reduce((weakest, current)=>
+            !weakest ?
+                current : current.health < weakest.health ? current : weakest)
+    }
+    attack(aim){
+        return this.robot.attack(...this.position.deltaArray(aim));
     }
     updatePosition(){
         this.position = new Point(this.robot.me.x, this.robot.me.y);

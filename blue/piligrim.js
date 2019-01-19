@@ -25,9 +25,9 @@ export default class Piligrim extends WalkingRobot {
         return this.step();
     }
     goHome() {
-        let home = this.findFreePlace(this.home, 1);
+        let home = this.findFreePlace(this.home)[0];
         if (!home) return;
-        this.updatePath(home[0], this.robot.getVisibleRobotMap());
+        this.updatePath(home, this.robot.getVisibleRobotMap());
         return this.step();
     }
     giveRes() {
@@ -36,7 +36,13 @@ export default class Piligrim extends WalkingRobot {
     mine(){
         return this.robot.mine();
     }
+    homeIsDestroyed(){
+        return this.robot.getVisibleRobotMap()[this.home.y][this.home.x] > 0;
+    }
     updateAction(){
+        if(this.homeIsDestroyed()){
+            this.actionType = -1;
+        }
         if(this.isFull()){
             if (this.position.distanceSq(this.home) <= 2) {
                 this.actionType = 3;
