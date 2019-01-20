@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a11d43a4-5139-49e4-b5f9-edfec01c2433" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue/castle.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/castle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue/combat.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/combat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue/creature.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/creature.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue/crusader.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/crusader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue/piligrim.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/piligrim.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/red/robot.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="castle.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="castle.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/castle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="62" column="36" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
+            <state relative-caret-position="180">
+              <caret line="66" column="71" selection-start-line="66" selection-start-column="71" selection-end-line="66" selection-end-column="71" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -109,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="piligrim.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="piligrim.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blue/piligrim.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="43" column="19" lean-forward="true" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+            <state relative-caret-position="214">
+              <caret line="43" column="33" lean-forward="true" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -159,11 +154,11 @@
         <option value="$PROJECT_DIR$/blue/distance.js" />
         <option value="$PROJECT_DIR$/blue/robot.js" />
         <option value="$PROJECT_DIR$/blue/walkingRobot.js" />
-        <option value="$PROJECT_DIR$/blue/piligrim.js" />
         <option value="$PROJECT_DIR$/blue/crusader.js" />
         <option value="$PROJECT_DIR$/blue/combat.js" />
         <option value="$PROJECT_DIR$/blue/creature.js" />
         <option value="$PROJECT_DIR$/blue/castle.js" />
+        <option value="$PROJECT_DIR$/blue/piligrim.js" />
       </list>
     </option>
   </component>
@@ -261,12 +256,12 @@
       <option name="presentableId" value="Default" />
       <updated>1547461319287</updated>
       <workItem from="1547461320599" duration="104674000" />
-      <workItem from="1547835887602" duration="18113000" />
+      <workItem from="1547835887602" duration="19496000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122787000" />
+    <option name="totallyTimeSpent" value="124170000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -536,13 +531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blue/piligrim.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="43" column="19" lean-forward="true" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blue/crusader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -575,11 +563,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blue/castle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="62" column="36" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
+        <state relative-caret-position="180">
+          <caret line="66" column="71" selection-start-line="66" selection-start-column="71" selection-end-line="66" selection-end-column="71" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blue/piligrim.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="43" column="33" lean-forward="true" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
         </state>
       </provider>
     </entry>

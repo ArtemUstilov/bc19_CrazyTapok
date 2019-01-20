@@ -37,11 +37,12 @@ export default class Piligrim extends WalkingRobot {
         return this.robot.mine();
     }
     homeIsDestroyed(){
-        return this.robot.getVisibleRobotMap()[this.home.y][this.home.x] > 0;
+        return this.robot.getVisibleRobotMap()[this.home.y][this.home.x] == 0;
     }
     updateAction(){
         if(this.homeIsDestroyed()){
             this.actionType = -1;
+            return;
         }
         if(this.isFull()){
             if (this.position.distanceSq(this.home) <= 2) {

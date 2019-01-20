@@ -64,7 +64,7 @@ export default class Castle extends Creature {
             this.actionType = 2;
         else if (this.canAfford(SPECS.PILGRIM) && !this.mapIsFull && this.step < 100)
             this.actionType = 0;
-        else if(this.canAfford(SPECS.CRUSADER) && this.crusaders < 3)
+        else if(this.canAfford(SPECS.CRUSADER) && this.robot.fuel > 500)
             this.actionType = 1;
         else
             this.actionType = -1;
