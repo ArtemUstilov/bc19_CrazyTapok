@@ -20,13 +20,14 @@ export default class Piligrim extends WalkingRobot {
     }
     goMine() {
         let point = this.miningCors;
-        this.updatePath(point, this.robot.getVisibleRobotMap());
+        //this.log('POINT           ___________________________' + point)
+        this.updatePath(point);
         return this.step();
     }
     goHome() {
         let home = this.findFreePlace(this.home)[0];
         if (!home) return;
-        this.updatePath(home, this.robot.getVisibleRobotMap());
+        this.updatePath(home);
         return this.step();
     }
     giveRes() {
@@ -53,7 +54,7 @@ export default class Piligrim extends WalkingRobot {
             if(this.position.equal(this.miningCors)){
                 this.actionType = 'mine';
             }else{
-                this.actionType = 'goHome';
+                this.actionType = 'goMine';
             }
         }
     }

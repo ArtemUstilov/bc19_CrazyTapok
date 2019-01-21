@@ -27,12 +27,23 @@ export default class Castle extends Creature {
             [SPECS.CRUSADER]:5,
             [SPECS.PROPHET]:3,
         }
+        this.enemyCastle = this.enemyCastleLocation();
         this.radiusDefPositions(this.radiusDef[SPECS.PROPHET]);
         this.radiusDefPositions(this.radiusDef[SPECS.CRUSADER]);
     }
+    enemyCastleLocation() {
+        let point;
+        if(this.X_Mirror)
+            point =  new Point(this.position.x, this.width-1-this.position.y);
+        else
+            point = new Point(this.width-1-this.position.x, this.position.y);
+        if(!point)
+            throw new Error('CANT FIND ENEMIES CASTLE!!!')
+        return point;
+    }
     checkDistantMines(){
         this.miningCode.forEach((m,i)=>{
-            if(this.position.fastestPathLength(m, this.robot.map, this.robot.getVisibleRobotMap()) > 15)
+            if(this.position.fastestPathLength(m, this.robot.map, this.log.bind(this.robot)) > 15)
                 this.busyMines.add(i);
         })
     }
@@ -45,6 +56,7 @@ export default class Castle extends Creature {
     radiusDefPositions(R){
         let pos = [];
         let {x,y} = this.position;
+        let dist = this.position.distanceSq(this.enemyCastle)
         this.robot.map
             .map((row,i)=>{return {row,i}})
             .filter(ob=>ob.i>=y-R && ob.i <= y + R)
@@ -57,8 +69,9 @@ export default class Castle extends Creature {
                 if(ob.row[X2] && X2 != X1)
                     pos.push(new Point(X2,ob.i));
             })
-        pos.filter(point=>!this.resMap[point.y][point.x])
-        this.circle[`radius${R}`] = pos;
+        this.circle[`radius${R}`] = pos
+            .filter(point=>!this.resMap[point.y][point.x])
+            .filter(p=>p.distanceSq(this.enemyCastle) <= dist)
     }
     canAfford(unit, amount = 1) {
         let data = {
@@ -77,10 +90,12 @@ export default class Castle extends Creature {
             .reduce(x => x + 1, 1);
     }
     sendResCoor() {
+        if(!this.closestResource)return 0;
         let index = this.miningCode.findIndex(c=>this.closestResource.equal(c))
         this.busyMines.add(index)
         this.robot.castleTalk(255 - index);
         this.robot.signal(index, 2);
+        return 1;
     }
     findClosestResource() {
         let resources = [], lengths = [];
@@ -97,14 +112,17 @@ export default class Castle extends Creature {
         if(this.enemiesNearBy.length)
             this.actionType = 'attack';
         else if (!this.mapIsFull) {
-            if (this.canAfford(SPECS.PILGRIM))
+            if (this.canAfford(SPECS.PILGRIM) && this.robot.fuel > 500)
                 this.actionType = 'pilgrim';
-        } else if(this.step < 100)
-            if(this.canAfford(SPECS.PROPHET))
+        } else if(this.circle.radius5.length  && this.robot.fuel > 500) {
+            if (this.canAfford(SPECS.CRUSADER))
+                this.actionType = 'crusader_D'
+        } else if(this.circle.radius3.length  && this.robot.fuel > 500) {
+            if (this.canAfford(SPECS.PROPHET))
                 this.actionType = 'prophet_D'
-        else if(this.canAfford(SPECS.CRUSADER))
+        } else if(this.canAfford(SPECS.CRUSADER) && this.robot.fuel > 500){
             this.actionType = 'crusader_A'
-        else
+        } else
             this.actionType = 'freeze'
     }
     makeProphet(behavior){
@@ -113,7 +131,8 @@ export default class Castle extends Creature {
         this.currentFreePlace = this.position.deltaArray(this.findFreePlace()[0]);
         if(this.currentFreePlace) {
             this.prophets++;
-            this.sendBehav(behavior, SPECS.PROPHET);
+            if(!this.sendBehav(behavior, SPECS.PROPHET))
+                return;
             return this.robot.buildUnit(SPECS.PROPHET, ...this.currentFreePlace);
         }
     }
@@ -121,7 +140,7 @@ export default class Castle extends Creature {
         if(!this.canAfford(SPECS.PILGRIM))
             return;
         this.findClosestResource();
-        this.sendResCoor();
+        if(!this.sendResCoor())return;
         this.currentFreePlace = this.position.deltaArray(this.findFreePlace()[0]);
         if(this.currentFreePlace) {
             this.piligrims++;
@@ -131,11 +150,13 @@ export default class Castle extends Creature {
     sendBehav(behavior, unit){
         if(behavior == 1){
             let dest = this.circle[`radius${this.radiusDef[unit]}`].pop();
+            if(!dest)return 0;
             let x = dest.x < 10 ? '0' + dest.x : dest.x;
             let y = dest.y < 10 ? '0' + dest.y : dest.y;
             behavior+=x+''+y;
         }
         this.robot.signal(+behavior, 2);
+        return 1;
     }
     makeCrusader(behavior){
         if(!this.canAfford(SPECS.CRUSADER))
@@ -143,7 +164,8 @@ export default class Castle extends Creature {
         this.currentFreePlace = this.position.deltaArray(this.findFreePlace()[0]);
         if(this.currentFreePlace) {
             this.crusaders++;
-            this.sendBehav(behavior, SPECS.CRUSADER);
+            if(!this.sendBehav(behavior, SPECS.CRUSADER))
+                return;
             return this.robot.buildUnit(SPECS.CRUSADER, ...this.currentFreePlace);
         }
     }

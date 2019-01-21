@@ -54,8 +54,7 @@ export class Combat extends WalkingRobot {
     }
     goToDefPos(){
         let dest = this.posForDef;
-        this.updatePath(dest, this.robot.getVisibleRobotMap());
-        this.log(this.currentPath.toString())
+        this.updatePath(dest);
         return this.step();
     }
     updateActionsDef(){

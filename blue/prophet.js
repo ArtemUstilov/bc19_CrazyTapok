@@ -13,10 +13,10 @@ export default class Prophet extends Combat {
     goToCastle() {
         super.goToCastle();
         let dest = this.findFreePlace(this.enemyCastle, Math.sqrt(this.attackRangeMax)-1, Math.sqrt(this.attackRangeMin))[0];
-        this.updatePath(dest, this.robot.getVisibleRobotMap());
+        this.updatePath(dest);
         return this.step();
     }
     do_someth(){
-        super.do_someth();
+        return super.do_someth();
     }
 }

@@ -12,7 +12,6 @@ export default class Crusader extends Combat {
         return this.step();
     }
     do_someth(){
-        super.do_someth();
-
+        return super.do_someth();
     }
 }

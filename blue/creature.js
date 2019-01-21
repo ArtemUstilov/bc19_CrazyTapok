@@ -21,6 +21,7 @@ export default class Creature {
     inRange(dist){
         return dist <= this.attackRange
     }
+
     checkEnemies(){
         this.enemiesNearBy = this.robot.getVisibleRobots()
             .filter(r=>r.team != this.robot.me.team)
