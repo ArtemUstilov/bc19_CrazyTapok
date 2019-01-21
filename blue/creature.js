@@ -14,7 +14,7 @@ export default class Creature {
         this.miningCode = [];
         this.resMap = undefined;
         this.enemiesNearBy = [];
-        this.attackRange;
+        this.attackRange = 0;
         this.makeResMap()
         this.indexingMining();
     }
@@ -34,22 +34,22 @@ export default class Creature {
                 current : current.health < weakest.health ? current : weakest)
     }
     attack(aim){
-        return this.robot.attack(...this.position.deltaArray(aim));
+        return this.canAffordAttack() && this.robot.attack(...this.position.deltaArray(aim));
     }
     updatePosition(){
         this.position = new Point(this.robot.me.x, this.robot.me.y);
     }
-    findFreePlace(dest, range = 1) {
+    findFreePlace(dest, range = 1, blindZone = 0) {
         range = Math.floor(range)
         let freeP = [];
         let x = dest ? dest.x : this.position.x;
         let y = dest ? dest.y : this.position.y;
         this.robot.getVisibleRobotMap()
             .map((c,i)=>{return {c,i}})
-            .filter(ob=>ob.i>=y-range && ob.i <= y + range)
+            .filter(ob=>ob.i>=y-range && ob.i <= y + range && (ob.i >= y+blindZone || ob.i <= y-blindZone))
             .forEach((row)=>row.c
                 .map((obt,j)=>{return {c:obt,i:row.i,j}})
-                .filter(o=>o.j>=x-range && o.j <= x + range)
+                .filter(o=>o.j>=x-range && o.j <= x + range && (o.j >= x+blindZone || o.j <= x-blindZone))
                 .filter(ob=>ob.c <= 0 && this.robot.map[ob.i][ob.j])
                 .map(ob=>new Point(ob.j,ob.i))
                 .filter(p=>range == 1 || range*range >= p.distanceSq(new Point(x,y)))
@@ -101,5 +101,15 @@ export default class Creature {
             if(this.resMap[y][x])
                 this.miningCode.push(new Point(x,y))
         }))
+    }
+
+    canAffordAttack() {
+        let data = {
+            [SPECS.PROPHET]:25,
+            [SPECS.CRUSADER]:10,
+            [SPECS.PREACHER]:15,
+            [SPECS.CASTLE]:0,
+        };
+        return data[this.robot.me.unit] <= this.robot.fuel;
     }
 }

@@ -1,8 +1,9 @@
 import {BCAbstractRobot, SPECS} from 'battlecode';
-import {Combat as Preacher, Combat as Prophet} from './combat.js'
+import {Combat as Preacher} from './combat.js'
 import Piligrim from './piligrim.js';
 import Castle from './castle.js';
 import Crusader from './crusader.js'
+import Prophet from './prophet.js'
 
 let step = -1;
 

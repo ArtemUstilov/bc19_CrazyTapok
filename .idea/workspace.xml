@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a11d43a4-5139-49e4-b5f9-edfec01c2433" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/blue/prophet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue/castle.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/castle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue/combat.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/combat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue/creature.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/creature.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue/crusader.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/crusader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blue/piligrim.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/piligrim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blue/robot.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/robot.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,10 +29,22 @@
       <file leaf-file-name="robot.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/robot.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+            <state relative-caret-position="125">
+              <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prophet.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blue/prophet.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -35,8 +53,8 @@
       <file leaf-file-name="castle.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/castle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="66" column="71" selection-start-line="66" selection-start-column="71" selection-end-line="66" selection-end-column="71" />
+            <state relative-caret-position="85">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -47,8 +65,8 @@
       <file leaf-file-name="creature.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/creature.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+            <state>
+              <caret lean-forward="true" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -56,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="walkingRobot.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="walkingRobot.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blue/walkingRobot.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+            <state relative-caret-position="295">
+              <caret line="35" column="30" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -71,8 +89,8 @@
       <file leaf-file-name="combat.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/combat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+            <state>
+              <caret lean-forward="true" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -83,8 +101,8 @@
       <file leaf-file-name="crusader.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/crusader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -95,8 +113,8 @@
       <file leaf-file-name="distance.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/distance.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="29" column="26" lean-forward="true" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+            <state relative-caret-position="442">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -104,11 +122,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="piligrim.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="piligrim.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/piligrim.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="43" column="33" lean-forward="true" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+            <state relative-caret-position="17">
+              <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="compiled_bot1.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/compiled_bot1.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="434">
+              <caret line="790" column="12" lean-forward="true" selection-start-line="790" selection-start-column="12" selection-end-line="790" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -128,11 +155,12 @@
     <findStrings>
       <find>this.miningC</find>
       <find>robo</find>
-      <find>this.log</find>
       <find>this.miningCode</find>
       <find>miningCode</find>
       <find>find</find>
       <find>findFree</find>
+      <find>sendBe</find>
+      <find>this.log</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -153,12 +181,13 @@
         <option value="$PROJECT_DIR$/blue/point.js" />
         <option value="$PROJECT_DIR$/blue/distance.js" />
         <option value="$PROJECT_DIR$/blue/robot.js" />
-        <option value="$PROJECT_DIR$/blue/walkingRobot.js" />
-        <option value="$PROJECT_DIR$/blue/crusader.js" />
-        <option value="$PROJECT_DIR$/blue/combat.js" />
         <option value="$PROJECT_DIR$/blue/creature.js" />
-        <option value="$PROJECT_DIR$/blue/castle.js" />
         <option value="$PROJECT_DIR$/blue/piligrim.js" />
+        <option value="$PROJECT_DIR$/blue/crusader.js" />
+        <option value="$PROJECT_DIR$/blue/prophet.js" />
+        <option value="$PROJECT_DIR$/blue/castle.js" />
+        <option value="$PROJECT_DIR$/blue/combat.js" />
+        <option value="$PROJECT_DIR$/blue/walkingRobot.js" />
       </list>
     </option>
   </component>
@@ -201,11 +230,6 @@
               <item name="new_bot" type="b2602c69:ProjectViewProjectNode" />
               <item name="new_bot" type="462c0819:PsiDirectoryNode" />
               <item name="blue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="new_bot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="new_bot" type="462c0819:PsiDirectoryNode" />
-              <item name="potentialField" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -256,12 +280,12 @@
       <option name="presentableId" value="Default" />
       <updated>1547461319287</updated>
       <workItem from="1547461320599" duration="104674000" />
-      <workItem from="1547835887602" duration="19496000" />
+      <workItem from="1547835887602" duration="29728000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124170000" />
+    <option name="totallyTimeSpent" value="134402000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -276,7 +300,7 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="3" sideWeight="0.49636364" visible="true" weight="0.247782" />
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49636364" visible="true" weight="0.247782" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.3293011" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
@@ -284,7 +308,7 @@
       <window_info anchor="bottom" id="Run" order="6" weight="0.3293011" />
       <window_info id="npm" order="0" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.26075268" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.26075268" />
       <window_info id="Favorites" order="1" sideWeight="0.50363636" side_tool="true" visible="true" weight="0.247782" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39919356" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -491,26 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blue/robot.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blue/walkingRobot.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/red/castle.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -521,40 +525,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blue/distance.js">
+    <entry file="file://$PROJECT_DIR$/compiled_bot1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="29" column="26" lean-forward="true" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="434">
+          <caret line="790" column="12" lean-forward="true" selection-start-line="790" selection-start-column="12" selection-end-line="790" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blue/crusader.js">
+    <entry file="file://$PROJECT_DIR$/blue/prophet.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="340">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blue/combat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blue/creature.js">
+    <entry file="file://$PROJECT_DIR$/blue/crusader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -563,18 +554,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blue/castle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="66" column="71" selection-start-line="66" selection-start-column="71" selection-end-line="66" selection-end-column="71" />
+        <state relative-caret-position="85">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/blue/distance.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/blue/piligrim.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="43" column="33" lean-forward="true" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+        <state relative-caret-position="17">
+          <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blue/robot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blue/combat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blue/creature.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blue/walkingRobot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="35" column="30" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

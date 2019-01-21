@@ -8,7 +8,6 @@ export default class Piligrim extends WalkingRobot {
         this.KARBCAPACITY = 20;
         this.FUELCAPACITY = 100;
         this.recieveMessage()
-        // 0-goMine, 1-readyToMine, 2-goHome, 3-readyToGive
     }
     recieveMessage() {
         let castle = this.robot.getRobot(this.robot.getVisibleRobotMap()[this.home.y][this.home.x]);
@@ -41,20 +40,20 @@ export default class Piligrim extends WalkingRobot {
     }
     updateAction(){
         if(this.homeIsDestroyed()){
-            this.actionType = -1;
+            this.actionType = 'freeze';
             return;
         }
         if(this.isFull()){
             if (this.position.distanceSq(this.home) <= 2) {
-                this.actionType = 3;
+                this.actionType = 'give';
             }else{
-                this.actionType = 2;
+                this.actionType = 'goHome';
             }
         }else{
             if(this.position.equal(this.miningCors)){
-                this.actionType = 1;
+                this.actionType = 'mine';
             }else{
-                this.actionType = 0;
+                this.actionType = 'goHome';
             }
         }
     }
@@ -62,14 +61,18 @@ export default class Piligrim extends WalkingRobot {
         super.do_someth();
         this.updateAction();
         switch (this.actionType) {
-            case 0:
+            case 'goMine':
                 return this.goMine();
-            case 1:
+            case 'mine':
                 return this.mine();
-            case 2:
+            case 'goHome':
                 return this.goHome();
-            case 3:
+            case 'give':
                 return this.giveRes();
+            case 'freeze':
+                return;
+            default:
+                throw new Error('ILLEGAL ACTION TYPE')
         }
 
     }
