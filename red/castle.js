@@ -9,6 +9,7 @@ export default class Castle extends Creature {
         this.closestResource = undefined;
         this.mapIsFull = false;
         this.currentFreePlace = undefined;
+        this.checkDistantMines();
         this.actionType = 'freeze';
         this.attackRange = 10;
         this.circle = {}
@@ -40,32 +41,12 @@ export default class Castle extends Creature {
             throw new Error('CANT FIND ENEMIES CASTLE!!!')
         return point;
     }
-    analyzeResMap(){
-        let potField = this.robot.map.map(row=>row.map(c=>0));
-        this.getIndependentMines().forEach(point=>this.impulse(potField,point,6));
-        potField.forEach(this.log);
+    checkDistantMines(){
+        this.miningCode.forEach((m,i)=>{
+            if(this.position.fastestPathLength(m, this.robot.map, this.log.bind(this.robot)) > 15)
+                this.busyMines.add(i);
+        })
     }
-    getIndependentMines(){
-        return this.miningCode.filter((_,i)=>!this.busyMines.has(i));
-    }
-    impulse(map, point, strength){
-        map
-            .map((row,i)=>{return {row,i}})
-            .filter(ob=>ob.i > point.y-strength && ob.i < point.y+strength)
-            .forEach(ob=>ob.row
-                .map((p,j)=>{return {p,j}})
-                .filter(ob=>ob.j > point.x-strength && ob.j < point.x+strength)
-                .filter(pOb=>!this.resMap[ob.i][pOb.j])
-                .forEach(pOb=>{
-                    map[ob.i][pOb.j] += strength-Math.round(Math.sqrt(point.distanceSq(new Point(pOb.j, ob.i))))
-                }))
-    }
-    // checkDistantMines(){
-    //     this.miningCode.forEach((m,i)=>{
-    //         if()
-    //             this.busyMines.add(i);
-    //     })
-    // }
     recieveMsgs(){
         this.robot.getVisibleRobots()
             .filter(x => SPECS.CASTLE == x.unit)
@@ -120,7 +101,6 @@ export default class Castle extends Creature {
         let resources = [], lengths = [];
         this.miningCode
             .filter((_,i)=>!this.busyMines.has(i))
-            .filter(p=>this.position.fastestPathLength(p, this.robot.map) < 10)
             .forEach((mineCell, index) => {
                 resources.push(mineCell);
                 lengths.push(this.position.distanceSq(mineCell))});
@@ -134,12 +114,6 @@ export default class Castle extends Creature {
         else if (!this.mapIsFull) {
             if (this.canAfford(SPECS.PILGRIM) && this.robot.fuel > 500)
                 this.actionType = 'pilgrim';
-        } else if(this.circle.radius5.length  && this.robot.fuel > 500) {
-            if (this.canAfford(SPECS.CRUSADER))
-                this.actionType = 'crusader_D'
-        } else if(this.circle.radius3.length  && this.robot.fuel > 500) {
-            if (this.canAfford(SPECS.PROPHET))
-                this.actionType = 'prophet_D'
         } else if(this.canAfford(SPECS.CRUSADER) && this.robot.fuel > 500){
             this.actionType = 'crusader_A'
         } else
@@ -191,8 +165,6 @@ export default class Castle extends Creature {
     }
     do_someth(ign) {
         this.step++;
-        if(this.step==20)
-            this.analyzeResMap()
         this.recieveMsgs();
         this.checkEnemies();
         this.updateActions();

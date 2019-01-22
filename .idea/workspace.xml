@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a11d43a4-5139-49e4-b5f9-edfec01c2433" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/blue/castle.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/castle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue/combat.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/combat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue/creature.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/creature.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue/crusader.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/crusader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue/distance.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/distance.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue/piligrim.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/piligrim.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue/point.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/point.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue/prophet.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/prophet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blue/walkingRobot.js" beforeDir="false" afterPath="$PROJECT_DIR$/blue/walkingRobot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiled_bot2.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,18 +20,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="robot.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blue/robot.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="prophet.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/prophet.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -54,8 +35,8 @@
       <file leaf-file-name="castle.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blue/castle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="132" column="28" lean-forward="true" selection-start-line="132" selection-start-column="28" selection-end-line="132" selection-end-column="28" />
+            <state relative-caret-position="275">
+              <caret line="125" column="46" lean-forward="true" selection-start-line="125" selection-start-column="46" selection-end-line="125" selection-end-column="46" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -66,8 +47,8 @@
       <file leaf-file-name="creature.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blue/creature.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="74">
+              <caret line="84" column="17" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -161,6 +142,8 @@
       <find>this.log</find>
       <find>updatePath</find>
       <find>fastest</find>
+      <find>busy</find>
+      <find>check</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -187,6 +170,7 @@
         <option value="$PROJECT_DIR$/blue/walkingRobot.js" />
         <option value="$PROJECT_DIR$/blue/point.js" />
         <option value="$PROJECT_DIR$/blue/distance.js" />
+        <option value="$PROJECT_DIR$/red/castle.js" />
         <option value="$PROJECT_DIR$/blue/castle.js" />
       </list>
     </option>
@@ -230,6 +214,11 @@
               <item name="new_bot" type="b2602c69:ProjectViewProjectNode" />
               <item name="new_bot" type="462c0819:PsiDirectoryNode" />
               <item name="blue" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="new_bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new_bot" type="462c0819:PsiDirectoryNode" />
+              <item name="red" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -280,12 +269,12 @@
       <option name="presentableId" value="Default" />
       <updated>1547461319287</updated>
       <workItem from="1547461320599" duration="104674000" />
-      <workItem from="1547835887602" duration="40894000" />
+      <workItem from="1547835887602" duration="43822000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145568000" />
+    <option name="totallyTimeSpent" value="148496000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -512,9 +501,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/red/castle.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/compiled_bot1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
@@ -559,16 +545,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blue/creature.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blue/combat.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -603,10 +579,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/red/castle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="115" column="44" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blue/creature.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="84" column="17" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/blue/castle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="132" column="28" lean-forward="true" selection-start-line="132" selection-start-column="28" selection-end-line="132" selection-end-column="28" />
+        <state relative-caret-position="275">
+          <caret line="125" column="46" lean-forward="true" selection-start-line="125" selection-start-column="46" selection-end-line="125" selection-end-column="46" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
